@@ -1,0 +1,119 @@
+OpenMSX Readme - An OpenTTD Music replacement set
+
+===============================
+Current Version: {{REPO_TITLE}}
+===============================
+
+Contents
+0 About OpenMSX
+1 Installing
+2 Contributing and compiling from source
+2 License
+3 Credits
+
+
+
+0 About OpenMSX
+===============
+
+OpenMSX is an open source replacement for the original Transport Tycoon Deluxe (TTD) music. It's currently work-in-progress and does not have a
+huge collection of music, contributions are welcome as long as they are licensed under the GPL v2 and / or the Creative Commons Sampling Plus 1.0
+License.
+
+
+
+1 Installing
+============
+
+1. First, make sure that you downloaded and installed at least OpenTTD version 1.0.0 or later.
+
+2. 
+a) Manually:
+Next, download the latest OpenMSX package. There are a few sources:
+- the development homepage http://bundles.openttdcoop.org/openmsx
+- Look for "OpenMSX" on one of the OpenTTD binaries servers, it is found in the "bananas" section:
+http://binaries.openttd.org/bananas/OpenMSX-0.0.1.tar.gz (or possibly with a newer version).
+
+Unpack the zip file into the OpenTTD /gm directory (see section 4.2 of the OpenTTD readme for a detailed treatise on all data dirs OpenTTD recognizes).
+- An OpenTTD folder in your user account's home directory:
+	Windows:	C:\My Documents (95, 98, ME)
+			C:\Documents and Settings\<username>\My Documents\OpenTTD (2000, XP)
+			C:\Users\<username>\Documents\OpenTTD (Vista, 7)
+	Mac OSX: ~/Documents/OpenTTD
+	Linux:   ~/.openttd
+- The OpenTTD installation directory.
+
+b) Via ingame content download:
+- Go to the content download, and search for OpenMSX; it's found in the baseset category.
+
+3. In the main menu of the game, click the Game Options  button. The Game
+Options  dialog will appear.
+
+4. Select OpenMSX  from the drop-down list below Base Music set if that's not selected already (bottom left of window). Close the window using the × in the upper left corner.
+
+Now that wasn't so hard, was it? Anyways, if you're having trouble getting OpenMSX to work, please file a detailed report on what you did, what error messages you got and where you got stuck at our bug tracker at http://dev.openttdcoop.org/projects/openmsx or in the tt-forums.
+
+
+
+2 Contributing and compiling from source
+========================================
+
+The OpenMSX source is available in a Mercurial repository or as gzip'ed tarball. You can do an anonymous checkout from http://mz.openttdcoop.org/hg/openmsx , e.g. using
+   hg clone http://mz.openttdcoop.org/hg/openmsx or obtain the tarball from http://bundles.openttdcoop.org/openmsx/releases.
+   
+Prerequisites to building OpenMSX:
+- mercurial (only when not building from a tarball, available from http://mercurial.selenic.com/wiki/Download?action=show&redirect=BinaryPackages)
+- md5sum (linux, mingw) or md5 (mac)
+- some gnu utils: make, cat, sed
+- unix2dos for convenient conversion of the text files
+- python (if you use mercurial, you'll have python)
+and you might additionally want a text editor of your choice and a graphics programme suitable to handle palettes. 
+
+On Windows: we advise to get a mingw development environment, download mercurial from the sources mentioned above)
+For more detailed instructions see our guide at http://dev.openttdcoop.org/projects/home/wiki and the very extensive and detailed installation instructions on the mingw wiki at http://www.mingw.org/wiki/Getting_Started
+
+On Linux: your system should already have most tools, you'll probably only mercurial available from the source mentioned above. For installation instructions concerning mercurial refer to the manual of your distribution.
+
+On Mac: Install the developers tools. Mercurial is easiest insalled via macports: sudo port install mercurial
+
+The use of mercurial is strongly encouraged as only that allows to keep track of changes.
+
+Once all tools are installed, get a checkout of the repository and you can build OpenMSX using make. The following targets are available:
+- all: builds all grfs and the obm file
+- install: build and then copy OpenMSX in your OpenTTD data directory. Use Makefile.local to specify a different path
+- clean: cleans all generated files
+- mrproper: also cleans generated directories
+- bundle_src: create a source tarball
+- bundle_zip: create a zip archive of OpenMSX
+- bundle_bz2: create a bzip2 archive of OpenMSX
+- bundle_tar: create a tar archive of OpenMSX
+
+Given the usual case that you modify something within OpenMSX and want to test that, a simple 'make install' should suffice and you can immediately test the changes ingame, if you selected the nightly version of OpenMSX. Given default paths, a 'make install' will overwrite a previous nightly version of OpenMSX. Mind to re-start OpenTTD as it needs to re-read the grf files.
+
+
+
+3 License
+=========
+
+OpenMSX Music Replacement Set for OpenTTD Copyright (C) 2010 OpenMSX Authors (see below)
+
+This set is dual-licensed, you can chose either (see license.txt for the legal code):
+
+a) GPL v2+
+
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License version 2 as published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 1 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+b) Creative Commons Sampling Plus 1.0 License
+
+
+
+4 Credits
+=========
+
+OpenMSX is created by the following people (in no particular order):
+
+makefile and bundling:	planetmaker
