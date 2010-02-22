@@ -6,53 +6,53 @@ MAKEFILECONFIG=Makefile.config
 SHELL = /bin/sh
 
 # Add some OS detection and guess an install path (use the system's default)
-OSTYPE=$(shell uname -s)
+OSTYPE:=$(shell uname -s)
 ifeq ($(OSTYPE),Linux)
-INSTALLDIR=$(HOME)/.openttd/gm
+INSTALLDIR:=$(HOME)/.openttd/gm
 else
 ifeq ($(OSTYPE),Darwin)
-INSTALLDIR=$(HOME)/Documents/OpenTTD/gm
+INSTALLDIR:=$(HOME)/Documents/OpenTTD/gm
 else
 ifeq ($(shell echo "$(OSTYPE)" | cut -d_ -f1),MINGW32)
-INSTALLDIR=C:\Documents and Settings\$(USERNAME)\My Documents\OpenTTD\gm
+INSTALLDIR:=C:\Documents and Settings\$(USERNAME)\My Documents\OpenTTD\gm
 else
-INSTALLDIR=
+INSTALLDIR:=
 endif
 endif
 endif
 
 # define a few repository references used also in makefile.config
-REPO_REVISION = $(shell hg parent --template="{rev}\n")
-REPO_MODIFIED = $(shell [ -n "`hg status '.' | grep -v '^?'`" ] && echo "M" || echo "")
-REPO_TAGS     = $(shell hg parent --template="{tags}" | grep -v "tip" | cut -d\  -f1)
+REPO_REVISION := $(shell hg parent --template="{rev}\n")
+REPO_MODIFIED := $(shell [ -n "`hg status '.' | grep -v '^?'`" ] && echo "M" || echo "")
+REPO_TAGS     := $(shell hg parent --template="{tags}" | grep -v "tip" | cut -d\  -f1)
 
 include ${MAKEFILECONFIG}
 
 # OS detection: Cygwin vs Linux
-ISCYGWIN = $(shell [ ! -d /cygdrive/ ]; echo $$?)
+ISCYGWIN := $(shell [ ! -d /cygdrive/ ]; echo $$?)
 
 # this overrides definitions from above:
 -include ${MAKEFILELOCAL}
 
-DIR_BASE       = $(FILENAME)-
-VERSION_STRING = $(shell [ -n "$(REPO_TAGS)" ] && echo $(REPO_TAGS)$(REPO_MODIFIED) || echo $(REPO_NIGHTLYNAME)-r$(REPO_REVISION)$(REPO_MODIFIED))
-DIR_NAME       = $(shell [ -n "$(REPO_TAGS)" ] && echo $(DIR_BASE)$(VERSION_STRING) || echo $(DIR_BASE)$(REPO_NIGHTLYNAME))
-DIR_NAME_SRC   = $(DIR_BASE)$(VERSION_STRING)-source
+DIR_BASE       := $(FILENAME)-
+VERSION_STRING := $(shell [ -n "$(REPO_TAGS)" ] && echo $(REPO_TAGS)$(REPO_MODIFIED) || echo $(REPO_NIGHTLYNAME)-r$(REPO_REVISION)$(REPO_MODIFIED))
+DIR_NAME       := $(shell [ -n "$(REPO_TAGS)" ] && echo $(DIR_BASE)$(VERSION_STRING) || echo $(DIR_BASE)$(REPO_NIGHTLYNAME))
+DIR_NAME_SRC   := $(DIR_BASE)$(VERSION_STRING)-source
 # Tarname has no version: overwrite for make install
-TAR_FILENAME   = $(DIR_NAME).$(TAR_SUFFIX)
+TAR_FILENAME   := $(DIR_NAME).$(TAR_SUFFIX)
 # The release filenames bear the version being built.
-ZIP_FILENAME   = $(DIR_BASE)$(VERSION_STRING).$(ZIP_SUFFIX)
-BZIP_FILENAME  = $(DIR_BASE)$(VERSION_STRING).$(BZIP2_SUFFIX)
-MIDI_FILES     = $(shell cat $(LIST_FILENAME) | scripts/midifiles.py)
+ZIP_FILENAME   := $(DIR_BASE)$(VERSION_STRING).$(ZIP_SUFFIX)
+BZIP_FILENAME  := $(DIR_BASE)$(VERSION_STRING).$(BZIP2_SUFFIX)
+MIDI_FILES     := $(shell cat $(LIST_FILENAME) | scripts/midifiles.py)
 
-REPO_DIRS      = $(dir $(BUNDLE_FILES))
+REPO_DIRS      := $(dir $(BUNDLE_FILES))
 
 -include ${MAKEFILELOCAL}
 
 vpath
 
 .PHONY: clean all bundle bundle_tar bundle_zip bundle_bzip install release release_zip remake test
-
+.SUFFIXES:
 # Now, the fun stuff:
 
 # Target for all:
@@ -105,7 +105,7 @@ $(REPO_FILENAME) : $(LIST_FILENAME) $(MIDI_FILES) $(DESC_FILENAME) $(README_FILE
 		| sed -e "s/$(REPO_REVISION_DUMMY)/$(REPO_REVISION)/" \
 		> $@
 	
-$(README_FILENAME): docs/readme.ptxt
+docs/readme.txt: docs/readme.ptxt
 	$(_E) "[Generating:] $@"
 	$(_V) cat $< \
 		| sed -e "s/$(REPO_TITLE_DUMMY)/$(REPO_TITLE)/" \
