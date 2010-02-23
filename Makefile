@@ -172,7 +172,7 @@ install: $(TAR_FILENAME) $(INSTALLDIR)
 bundle_src:
 	$(_V) rm -rf $(DIR_NAME_SRC)
 	$(_V) mkdir -p $(DIR_NAME_SRC)
-	$(_V) cp -R $(SRCDIR) $(DOCDIR) Makefile Makefile.config $(DIR_NAME_SRC)
+	$(_V) cp -R $(MAINDIRS) Makefile Makefile.config $(DIR_NAME_SRC)
 	$(_V) cp Makefile.local.sample $(DIR_NAME_SRC)/Makefile.local
 	$(_V) echo 'REPO_REVISION = $(REPO_REVISION)' >> $(DIR_NAME_SRC)/Makefile.local
 	$(_V) echo 'REPO_MODIFIED = $(REPO_MODIFIED)' >> $(DIR_NAME_SRC)/Makefile.local
