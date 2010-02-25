@@ -1,3 +1,8 @@
-description       = OpenMSX sound replacement set for OpenTTD. Freely available under the terms of the GPL v2 and the Creative Commons Sampling Plus 1.0 License. For full credits see "readme.txt"
-description.en_GB = OpenMSX sound replacement set for OpenTTD. Freely available under the terms of the GPL v2 and the Creative Commons Sampling Plus 1.0 License. For full credits see "readme.txt"
+description       = OpenMSX music replacement set for OpenTTD. Freely available under the terms of the GPL v2 and the Creative Commons Sampling Plus 1.0 License. For full credits see "readme.txt"
+description.en_GB = OpenMSX music replacement set for OpenTTD. Freely available under the terms of the GPL v2 and the Creative Commons Sampling Plus 1.0 License. For full credits see "readme.txt"
 description.de_DE = OpenMSX Musik-Set für OpenTTD. Frei erhältlich unter der GPL v2 und der Creative Commons Sampling Plus 1.0 Lizenz. Die vollständigen Referenzen sind in "readme.txt".
+description.cs_CZ = Nová nahrazující sada hudby pro OpenTTD. Volně dostupné pod licencemi GNU General Public License verze 2 a Creative Commons Sampling Plus 1.0. Bližší informace naleznete v souboru "readme.txt"
+description.fi_FI = OpenMSX äänipaketti OpenTTD:lle. Vapaasti saatavilla GPL v2 ja Creative Commons Sampling Plus 1.0-lisensseillä. Lisätietoja tiedostossa "readme.txt"
+description.hu_HU = OpenMSX zenei alapcsomag az OpenTTD-hez. Ingyenesen hozzáférhető a GPL v2 és a Creative Commons Sampling Plus 1.0 License feltételeivel. A teljes listához lásd a "readme.txt" fájlt.
+description.nl_NL = OpenMSX muziekset voor OpenTTD. Vrij beschikbaar onder de voorwaarden van GPL v2 en de Creative Commons Sampling Plus 1.0 License. Voor de volledige verantwoording zie "readme.txt".
+description.it_IT = Pacchetto musicale sostitutivo OpenMSX per OpenTTD. Liberamente disponibile secondo i termini delle licenze GPL v2 e Creative Commons Sampling Plus 1.0. Per l'elenco completo dei riconoscimenti, si veda "readme.txt".
