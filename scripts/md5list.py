@@ -20,7 +20,7 @@ while 1:
 	if systemtype == 'Linux':
 		md5call = ["md5sum"]
 	elif systemtype == 'Darwin':
-		md5call = ["md5", "-5"]
+		md5call = ["md5", "-r"]
 	else:
 		md5call = ["md5sum"]
 	md5call = md5call + ["src/"+string.strip(separate[1])]
