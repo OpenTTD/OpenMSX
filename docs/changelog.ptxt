@@ -1,3 +1,9 @@
-OpenMSX 0.0.1
+OpenMSX 0.1.0
 -------------
-- Add: Initial release with two songs
+Feature: Modern Motion (Mr.Ksoft)
+Feature: Little Blue Box Car (Hazza)
+Feature: Keep on Rolling (Trolley Trev)
+Feature: Theme song (Samwise)
+Feature: French and Swedish description translation
+Feature: Dutch, Italian, French, Hungarian, Spanish, German, Czech description translations
+Feature: Build system which allows building the whole set from a simple table
