@@ -123,7 +123,7 @@ test_rev:
 # Clean the source tree
 clean:
 	$(_E) "[Cleaning]"
-	$(_V)-rm -rf *.orig *.pre *.bak *~ $(DOC_FILENAMES) $(SRCDIR)/*.bak
+	$(_V)-rm -rf *.orig *.pre *.bak *~ $(DOC_FILENAMES) $(SRCDIR)/*.bak $(REPO_FILENAME)
 
 mrproper: clean
 	$(_V)-rm -rf $(DIR_BASE)* $(REPO_FILENAME) $(DIR_NAME_SRC)
