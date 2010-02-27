@@ -14,7 +14,7 @@ while 1:
         separate = string.split(data,";")
 	if len(separate) != 4:
 		continue
-	res = separate[1] + " = " + string.strip(separate[3]) + "\n"
+	res = "%-32s = %s\n" % (separate[1], string.strip(separate[3]))
         sys.stdout.write(res)
     else:
         sys.stdout.flush()

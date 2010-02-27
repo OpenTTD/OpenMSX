@@ -26,7 +26,7 @@ while 1:
 	md5call = md5call + ["src/"+string.strip(separate[1])]
 	md5sum = subprocess.Popen(md5call, stdout=subprocess.PIPE).communicate()[0]
 	md5sum = string.split(md5sum)
-	res = separate[1] + " = " + md5sum[0] + "\n"
+	res = "%-32s = %s\n" % (separate[1], md5sum[0])
         sys.stdout.write(res)
     else:
         sys.stdout.flush()
