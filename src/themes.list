@@ -1,8 +1,8 @@
 # Purpose	filename	author		Title
-theme; OpenTTDproject.mid;	Samwise;	Theme song
-old_0; KeepOnRolling.mid;	Trolley Trev;	Keep on rolling
-old_1; LittleBlueBoxCar.mid;	Hazza;		Little Blue Box Car
-old_2; ModernMotion.mid;	Mr.Ksoft;	Modern Motion
+theme; openttd_project.mid;	Samwise;	Theme song
+old_0; keep_on_rolling.mid;	Trolley Trev;	Keep on rolling
+old_1; little_blue_box_car.mid;	Hazza;		Little Blue Box Car
+old_2; modern_motion.mid;	Mr.Ksoft;	Modern Motion
 old_3
 old_4
 old_5
