@@ -4,6 +4,5 @@ Feature: Modern Motion (Mr.Ksoft)
 Feature: Little Blue Box Car (Hazza)
 Feature: Keep on Rolling (Trolley Trev)
 Feature: Theme song (Samwise)
-Feature: French and Swedish description translation
-Feature: Dutch, Italian, French, Hungarian, Spanish, German, Czech description translations
+Feature: Bulgarian, Chinese (Traditional), Croatian, Indonesian, Norwegian (Bokmal), Portuguese, Russian, Slovenian, Swedish, Dutch, Italian, French, Hungarian, Spanish, German and Czech description translations
 Feature: Build system which allows building the whole set from a simple table
