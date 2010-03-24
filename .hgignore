@@ -12,7 +12,7 @@ openmsx-*
 docs/license.txt
 docs/changelog.txt
 docs/readme.txt
-REV
+Makefile.dep
 
 # Ignore directories from bundle creation / install:
 openmsx-nightly*

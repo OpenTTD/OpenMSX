@@ -1,0 +1,26 @@
+$(MAIN_TARGET): $(MAIN_FILENAME_SRC) $(MIDI_FILES) $(DESC_FILENAME) $(README_FILENAME) $(CHANGELOG_FILENAME) $(LICENSE_FILENAME) $(REV_FILENAME)
+	$(_E) "[Generating] $@"
+	@echo "[metadata]" > $@
+	@echo "name        = $(REPO_NAME)" >> $@
+	@echo "shortname   = $(REPO_SHORTNAME)" >> $@
+	@echo "version     = $(REPO_REVISION)" >> $@
+
+	$(_V) cat $(DESC_FILENAME_SRC) | sed 's/$$/ [$(REPO_TITLE)]/' >> $@
+
+	@echo "" >> $@
+	@echo "[files]" >> $@
+	$(_V) cat $(MAIN_FILENAME_SRC) | scripts/playlist.py >> $@
+
+	@echo "" >> $@
+	@echo "[md5s]" >> $@
+	$(_V) cat $(MAIN_FILENAME_SRC) | scripts/sanitize_list.py | scripts/md5list.py >> $@
+
+	@echo "" >> $@
+	@echo "[names]" >> $@
+	$(_V) cat $(MAIN_FILENAME_SRC) | scripts/sanitize_list.py | scripts/namelist.py >> $@
+	
+	@echo "" >> $@
+	@echo "[origin]" >> $@
+	@echo "$(REPO_ORIGIN)" >> $@
+	$(_E) "[Done] Basesound successfully generated."
+	$(_E) ""
