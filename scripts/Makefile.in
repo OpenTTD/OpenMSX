@@ -25,7 +25,7 @@ $(MAIN_TARGET): $(MAIN_FILENAME_SRC) $(MIDI_FILES) $(DESC_FILENAME) $(README_FIL
 	$(_E) "[Done] Basesound successfully generated."
 	$(_E) ""
 	
-readme.txt: readme.ptxt $(REV_FILENAME)
+docs/readme.txt: readme.ptxt $(REV_FILENAME)
 	$(_E) "[Generating] $@"
 	$(_V) cat $< \
 		| sed -e "s/$(REPO_TITLE_DUMMY)/$(REPO_TITLE)/" \

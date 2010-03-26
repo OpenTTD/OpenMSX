@@ -32,7 +32,7 @@ a) Manually:
 Next, download the latest OpenMSX package. There are a few sources:
 - the development homepage http://bundles.openttdcoop.org/openmsx
 - Look for "OpenMSX" on one of the OpenTTD binaries servers, it is found in the "bananas" section:
-http://binaries.openttd.org/bananas/OpenMSX-0.0.1.tar.gz (or possibly with a newer version).
+http://binaries.openttd.org/bananas/OpenMSX-0.2.1.tar.gz (or possibly with a newer version).
 
 Unpack the zip file into the OpenTTD /gm directory (see section 4.2 of the OpenTTD readme for a detailed treatise on all data dirs OpenTTD recognizes).
 - An OpenTTD folder in your user account's home directory:
@@ -87,6 +87,8 @@ Once all tools are installed, get a checkout of the repository and you can build
 - bundle_zip: create a zip archive of OpenMSX
 - bundle_bz2: create a bzip2 archive of OpenMSX
 - bundle_tar: create a tar archive of OpenMSX
+- check: checks the md5 sums of the built grf and obg files against those of
+the official release versions
 
 Given the usual case that you modify something within OpenMSX and want to test that, a simple 'make install' should suffice and you can immediately test the changes ingame, if you selected the nightly version of OpenMSX. Given default paths, a 'make install' will overwrite a previous nightly version of OpenMSX. Mind to re-start OpenTTD as it needs to re-read the grf files.
 
