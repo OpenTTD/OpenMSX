@@ -33,9 +33,6 @@ docs/readme.txt: readme.ptxt $(REV_FILENAME)
 		| sed -e "s/$(REPO_REVISION_DUMMY)/$(REPO_REVISION)/" \
 		| sed -e "s/$(OUTPUT_FILENAME_DUMMY)/$(OUTPUT_FILENAME)/" \
 		> $@
-
-	@echo "" >> $@
-	@echo "[authors]" >> $@
 	$(_V) cat $(MAIN_FILENAME_SRC) | scripts/sanitize_list.py | scripts/authorlist.py >> $@
 		
 	$(_V) [ -z "$(UNIX2DOS)" ] || $(UNIX2DOS) $(UNIX2DOS_FLAGS) $@

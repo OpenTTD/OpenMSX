@@ -9,9 +9,9 @@ while 1:
         # do some processing of the contents of
         # the data variable
         separate = string.split(data,";")
-	res = separate[1] + ": \t" + separate[2] + "\n"
+        print '%-30s %s' % (separate[1]+":", separate[2])
         # end of data processing command group
-        sys.stdout.write(res)
+		#        sys.stdout.write(res)
     else:
         sys.stdout.flush()
         break
