@@ -73,7 +73,7 @@ endif
 	$(_E) "[NFORENUM] $@"
 	$(_V)-$(NFORENUM) ${NFORENUM_FLAGS} $@
 
-%.txt: %.ptxt $(REV_FILENAME)
+changelog.txt license.txt: %.txt: %.ptxt $(REV_FILENAME)
 	$(_E) "[Generating] $@"
 	$(_V) cat $< \
 		| sed -e "s/$(REPO_TITLE_DUMMY)/$(REPO_TITLE)/" \
