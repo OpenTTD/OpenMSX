@@ -1,0 +1,238 @@
+Betreff: Re: OpenTTD Link
+Von: Redfarn Jim <jim.redfarn@ntlworld.com>
+Datum: Sat, 26 Jun 2010 21:05:08 +0100
+An: ottd@planetmaker.de
+
+Hello Ingo,
+
+I am strictly non-commercial and am happy for others to use my music.
+I won't accept money at any time.
+
+I now understand that the GPL license would allow others commercial use under certain conditions.
+I am prepared to accept that use, provided that I was still acknowledged as the composer / originator.
+I definitely would not want any money deriving from any commercial enterprise.
+
+I would not like to lose the right to edit my music, on my website, should I wish to do so.
+I am assuming that the GPL license would not prevent me from doing this.
+Please tell me if this is not the case.
+
+All the pieces that your group have selected are entirely my own compositions, except for:
+
+1. "Careless Love" This comes under the "traditional" category and is therefore in the public domain.
+
+2, "Moo Moo Boogie" was partly inspired by "Cow Cow Boogie".
+In my opinion,  Moo Moo Boogie  is sufficiently different from Cow Cow Boogie not to raise any copyright issues.
+In any case, the composer of Cow Cow Boogie died 66 years ago so that composition is also out of copyright.
+
+Thank you for your care.
+
+Regards,
+
+Jim
+
+
+On 26 Jun 2010, at 15:32, planetmaker wrote:
+
+> -----BEGIN PGP SIGNED MESSAGE-----
+> Hash: SHA1
+>
+> Hello Jim,
+>
+> thanks for adding the link to OpenTTD :-) and of course all your music.
+> Now we've listened to all your songs properly we decided that we'd like
+> these songs for our music set:
+>
+> http://homepage.ntlworld.com/jim.redfarn/SoulBoogie.mid
+> http://homepage.ntlworld.com/jim.redfarn/5432Gone.mid
+> http://homepage.ntlworld.com/jim.redfarn/CityBlues.mid
+> http://homepage.ntlworld.com/jim.redfarn/BoogieStopShuffle.mid
+> http://homepage.ntlworld.com/jim.redfarn/SlowNEasy.mid
+> http://homepage.ntlworld.com/jim.redfarn/Moo.mid
+> http://homepage.ntlworld.com/jim.redfarn/BigManBoogie.mid
+> http://homepage.ntlworld.com/jim.redfarn/BoogiMarabi.mid
+> http://homepage.ntlworld.com/jim.redfarn/SayWhat.mid
+> http://homepage.ntlworld.com/jim.redfarn/BeSharpBW.mid
+> http://homepage.ntlworld.com/jim.redfarn/CarelessPerc.mid
+> http://homepage.ntlworld.com/jim.redfarn/MoseyAlong.mid
+> http://homepage.ntlworld.com/jim.redfarn/NoWorkSong.mid
+> http://homepage.ntlworld.com/jim.redfarn/TheHobo.mid
+>
+> As you write on your website that the songs are "free for personal use",
+> but the GPL license we use in principle also allows commercial use under
+> certain conditions (we don't do it, we all work for free and don't sell
+> anything), I'd like to briefly explain what the GPL license means in
+> laymen's terms. Please tell me (again) that you're ok with this license
+> - - there are some people in the community who are concerned that I have
+> not been clear enough in my past e-mail :-) ; I'd then add your response
+> to the documentation so that no one has to be concerned anymore :-)
+>
+> I've added them locally to the music set, but I haven't yet published
+> it, awaiting your response.
+>
+> Cheers,
+> Ingo
+>
+>
+> Here attached the short human-readable break-down of it (quote from
+> http://creativecommons.org/licenses/GPL/2.0/ ). For the purpose of the
+> music you can replace the words "programme" and "source code" by "midi
+> files" (they are after all the 'source', the original work.
+>
+> ======================================================================
+>   1.  The freedom to run the program for any purpose.
+>   2. The freedom to study how the program works and adapt it to your needs.
+>   3. The freedom to redistribute copies so you can help your neighbor.
+>   4. The freedom to improve the program and release your improvements
+> to the public, so that the whole community benefits.
+>
+> You may exercise the freedoms specified here provided that you comply
+> with the express conditions of this license. The principal conditions are:
+>
+>    * You must conspicuously and appropriately publish on each copy
+> distributed an appropriate copyright notice and disclaimer of warranty
+> and keep intact all the notices that refer to this License and to the
+> absence of any warranty; and give any other recipients of the Program a
+> copy of the GNU General Public License along with the Program. Any
+> translation of the GNU General Public License must be accompanied by the
+> GNU General Public License.
+>    * If you modify your copy or copies of the program or any portion of
+> it, or develop a program based upon it, you may distribute the resulting
+> work provided you do so under the GNU General Public License. Any
+> translation of the GNU General Public License must be accompanied by the
+> GNU General Public License.
+>    * If you copy or distribute the program, you must accompany it with
+> the complete corresponding machine-readable source code or with a
+> written offer, valid for at least three years, to furnish the complete
+> corresponding machine-readable source code.
+>
+> ======================================================================
+> - -
+> -----BEGIN PGP SIGNATURE-----
+> Version: GnuPG v1.4.9 (Darwin)
+> Comment: Using GnuPG with Mozilla - http://enigmail.mozdev.org/
+>
+> iEYEARECAAYFAkwmD20ACgkQrNrK4E09wGqTkgCgpm9TwQl3X7WcVTO4WUm3+DM0
+> gWkAn3wS81gkvWs6F+pcoNCr/1ziZaje
+> =4XJY
+> -----END PGP SIGNATURE-----
+
+###############################################################################################
+
+Betreff: Addendum to OpenTTD JPL license issues.
+Von: Redfarn Jim <jim.redfarn@ntlworld.com>
+Datum: Sat, 26 Jun 2010 21:19:32 +0100
+An: Ingo von Borstel von Borstel <ottd@planetmaker.de>
+
+Dear Ingo,
+
+Apologies.
+I should also have said that "Big Man Boogie" is derived from a piece called "Clockwork Boogie"
+by Steve Clayton (who lives in Germany).
+However, I did write to Steve and he gave permission.
+
+Regards,
+
+Jim
+
+################################################################################################
+
+Betreff: Re: OpenTTD Link
+Von: Redfarn Jim <jim.redfarn@ntlworld.com>
+Datum: Sun, 27 Jun 2010 09:53:13 +0100
+An: Ingo von Borstel <ottd@planetmaker.de>
+
+Hello Ingo,
+
+Thanks very much for your detailed clarification.
+
+I am completely happy with everything.
+
+I hope you have every success with your ongoing project.
+
+Regards,
+
+Jim
+
+
+On 26 Jun 2010, at 23:44, Ingo von Borstel wrote:
+
+> -----BEGIN PGP SIGNED MESSAGE-----
+> Hash: SHA1
+>
+> Hi Jim,
+>
+> thanks for your prompt reply. Let me answer your questions and concerns
+> in place:
+>
+>> I am strictly non-commercial and am happy for others to use my music.
+>> I won't accept money at any time.
+> You don't have to :-)
+>
+>> I now understand that the GPL license would allow others commercial
+>> use under certain conditions. I am prepared to accept that use,
+>> provided that I was still acknowledged as the composer / originator.
+> That's absolutely required by the GPL license. AND they always have to
+> provide the source, your songs, for a shipping fee at most, if they
+> utilize GPL-licensed work.
+>
+>> I definitely would not want any money deriving from any commercial
+>> enterprise.
+>
+>> I would not like to lose the right to edit my music, on my website,
+>> should I wish to do so. I am assuming that the GPL license would not
+>> prevent me from doing this. Please tell me if this is not the case.
+> It's one of the fundamental requirements of the GPL: give credits, also
+> and especially if derivative work is created and your work used as part
+> of it. It has to be clearly stated what part was your work (that's why I
+> contacted you in the first place: I want and I have to give the proper
+> credits of any work I want to use.
+>
+> Also you as author don't give up any rights in any way except that you
+> cannot revoke the permission you gave. But this license is only about
+> the rights you grant others; it's a non-exclusive license. You as author
+> (and only you!) can re-license it under any conditions you like. It is
+> and will remain your work. An author can always do with his stuff what
+> he likes.
+>
+>> All the pieces that your group have selected are entirely my own
+>> compositions, except for:
+>>
+>> 1. "Careless Love" This comes under the "traditional" category and is
+>> therefore in the public domain.
+>>
+>> 2, "Moo Moo Boogie" was partly inspired by "Cow Cow Boogie". In my
+>> opinion,  Moo Moo Boogie  is sufficiently different from Cow Cow
+>> Boogie not to raise any copyright issues. In any case, the composer
+>> of Cow Cow Boogie died 66 years ago so that composition is also out
+>> of copyright.
+>
+>> I should also have said that "Big Man Boogie" is derived from a piece
+>> called "Clockwork Boogie" by Steve Clayton (who lives in Germany).
+>> However, I did write to Steve and he gave permission.
+>
+> Thanks for the clarification concerning "Careless Love", "Moo Moo
+> Boogie" and "Clockwork Boogie". I hope I could help with my
+> explanations, too, and that you find the license still acceptable :-)
+> The main practical purpose (and why commercial permission as in GPL is
+> kinda required) is that this pack may then also be put on e.g. CDs which
+> are shipped with gaming magazines or so on (which are obviously sold).
+>
+> I propose that you'll be credited in the readme for each song like
+> 5432gone_redfarn.mid:          Jim Redfarn
+> (http://homepage.ntlworld.com/jim.redfarn/MidiPage.htm)
+> Please tell me, if you like to be credited differently.
+>
+> Best regards and looking forward to your reply
+> Ingo
+>
+> -----BEGIN PGP SIGNATURE-----
+> Version: GnuPG v1.4.9 (Darwin)
+> Comment: Using GnuPG with Mozilla - http://enigmail.mozdev.org/
+>
+> iEYEARECAAYFAkwmgtQACgkQrNrK4E09wGo9SQCgghBogmTthWOmUGYD84Bj+4tJ
+> ZwEAni6GT1kCfsUrX9lsvPwKWg1HQotQ
+> =lCJq
+> -----END PGP SIGNATURE-----
+
+
+
