@@ -51,13 +51,13 @@ endif
 # Add some OS detection and guess an install path (use the system's default)
 OSTYPE:=$(shell uname -s)
 ifeq ($(OSTYPE),Linux)
-INSTALL_DIR?=$(HOME)/.openttd/data
+INSTALL_DIR?=$(HOME)/.openttd/gm
 else
 ifeq ($(OSTYPE),Darwin)
-INSTALL_DIR?=$(HOME)/Documents/OpenTTD/data
+INSTALL_DIR?=$(HOME)/Documents/OpenTTD/gm
 else
 ifeq ($(shell echo "$(OSTYPE)" | cut -d_ -f1),MINGW32)
-INSTALL_DIR?=C:\Documents and Settings\$(USERNAME)\My Documents\OpenTTD\data
+INSTALL_DIR?=C:\Documents and Settings\$(USERNAME)\My Documents\OpenTTD\gm
 else
 INSTALL_DIR?=
 endif
