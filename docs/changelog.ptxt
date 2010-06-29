@@ -1,3 +1,27 @@
+OpenMSX 1.0.0
+-------------
+Feature: 'Unidentifed Flying Scotsman' by imuh3
+Feature: 'Chugga Chugga Cha-ching' by imuh3
+Feature: '5432..Gone' from Jim Redfarn
+Feature: 'Boogie Marabi' from Jim Redfarn
+Feature: 'Moo Moo Boogie' from Jim Redfarn
+Feature: 'Say What' from Jim Redfarn
+Feature: 'Be sharp boogie' from Jim Redfarn
+Feature: 'Careless Love' by Jim Redfarn
+Feature: 'Mosey Along' by Jim Redfarn
+Feature: 'Slow and Easy' by Jim Redfarn
+Feature: 'City Blues' by Jim Redfarn
+Feature: 'No Work Song' by Jim Redfarn
+Feature: 'The Hobo' by Jim Redfarn
+
+Change: License now is only GPL v2
+
+Fix: Don't rebuild the md5sums file which one checks against
+Fix: Replace invalid general midi 'Little Blue Box Car' by TTSong by imuh3
+Fix: Replace invalid general midi 'Smooth Groove' by TTSong II by imuh3
+
+
+
 OpenMSX 0.2.1
 -------------
 Feature: New title theme
