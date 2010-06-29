@@ -13,12 +13,19 @@ Feature: 'Slow and Easy' by Jim Redfarn
 Feature: 'City Blues' by Jim Redfarn
 Feature: 'No Work Song' by Jim Redfarn
 Feature: 'The Hobo' by Jim Redfarn
+Feature: [Makefile] Add 'addcheck' which checks for dependencies not added to the mercurial repo
+Feature: [Makefile] Introduce target 'distclean' which should delete everything not found in the tarball (based on patch by blathijs)
 
 Change: License now is only GPL v2
 
 Fix: Don't rebuild the md5sums file which one checks against
 Fix: Replace invalid general midi 'Little Blue Box Car' by TTSong by imuh3
 Fix: Replace invalid general midi 'Smooth Groove' by TTSong II by imuh3
+Fix: [Makefile] Don't rebuild the md5sums file which one wants to check against
+Fix: [Makefile] Don't pack files which make no sense in a source release
+Fix: [Makefile] Fail on the missing file, not on the dependency check
+Fix: [Makefile] {{tag}} didn't work for some tags in readme file
+Fix: [Makefile] Also ignore removed files for dep checks
 
 
 
