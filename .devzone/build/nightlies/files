@@ -1,0 +1,5 @@
+R;%{BUILD}/*.zip
+%{BUILD}/*.md5
+%{BUILD}/*build.log
+E;%{BUILD}/*build.err.log
+%{BUILD}/*.obm
