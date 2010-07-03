@@ -33,6 +33,7 @@ test :
 	$(_E) "bzip:                         $(BZIP) $(BZIP_FLAGS)"
 	$(_E) "Local installation directory: $(INSTALL_DIR)"
 	$(_E) "Repository revision:          r$(REPO_REVISION)"
+	$(_E) "Repository branch:            $(REPO_BRANCH)"
 	$(_E) "Main target:                  $(MAIN_TARGET)"
 	$(_E) "GRF files:                    $(GRF_FILES)"
 	$(_E) "Doc files:                    $(DOC_FILES)"
