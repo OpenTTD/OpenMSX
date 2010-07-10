@@ -7,9 +7,10 @@ Current Version: {{REPO_TITLE}}
 Contents
 0 About OpenMSX
 1 Installing
-2 Contributing and compiling from source
-2 License
-3 Credits
+2 Troubleshooting
+3 Contributing and compiling from source
+4 License
+5 Credits
 
 
 
@@ -64,7 +65,20 @@ http://dev.openttdcoop.org/projects/openmsx or in the tt-forums.
 
 
 
-2 Contributing and compiling from source
+2 Troubleshooting and bad sound output
+======================================
+
+With OpenTTD earlier than 1.0.3 windows users may experience problems with their
+sound output which may lead to delays, cut-off songs or wrong pitch and generally
+bad sound output. This is a problem with Microsofts music driver interface. It is
+advised to use the "musicdriver = win32" setting in OpenTTD's config file, or in
+case of problems try other sound drivers. Consult the OpenTTD readme for available
+options and see also the known-bugs:
+http://vcs.openttd.org/svn/browser/trunk/known-bugs.txt?rev=20105#L69
+
+
+
+3 Contributing and compiling from source
 ========================================
 
 The OpenMSX source is available in a Mercurial repository or as gzip'ed tarball.
@@ -121,7 +135,7 @@ Mind to re-start OpenTTD as it needs to re-read the grf files.
 
 
 
-3 License
+4 License
 =========
 
 OpenMSX Music Replacement Set for OpenTTD Copyright (C) 2010 OpenMSX Authors
@@ -141,10 +155,10 @@ Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 
 
-4 Credits
+5 Credits
 =========
 
 OpenMSX is created by the following people (in order of the song list):
 
+programming and coordination   Ingo von Borstel (planetmaker)
 music critic and advisor:      kamnet
-makefile and bundling:         Ingo von Borstel (planetmaker)
