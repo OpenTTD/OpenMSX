@@ -5,7 +5,7 @@ $(MAIN_TARGET): $(MAIN_FILENAME_SRC) $(MIDI_FILES) $(DESC_FILENAME) $(README_FIL
 	@echo "shortname   = $(REPO_SHORTNAME)" >> $@
 	@echo "version     = $(REPO_REVISION)" >> $@
 
-	$(_V) cat $(DESC_FILENAME_SRC) | sed 's/$$/ [$(REPO_TITLE)]/' >> $@
+	$(_V) cat $(DESC_FILENAME_SRC) | grep -E '^description' | sed 's/$$/ [$(REPO_TITLE)]/' >> $@
 
 	@echo "" >> $@
 	@echo "[files]" >> $@
