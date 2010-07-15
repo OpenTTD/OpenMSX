@@ -68,12 +68,13 @@ http://dev.openttdcoop.org/projects/openmsx or in the tt-forums.
 2 Troubleshooting and bad sound output
 ======================================
 
-With OpenTTD earlier than 1.0.3 windows users may experience problems with their
-sound output which may lead to delays, cut-off songs or wrong pitch and generally
-bad sound output. This is a problem with Microsofts music driver interface(s). It
-is advised to use the "musicdriver = win32" setting in OpenTTD's config file, or
-as that one is also not entirely trouble-free, try other sound drivers, too.
-Consult the OpenTTD readme for available options and see also its known-bugs.txt
+Depending upon the hardware and the music driver used, OpenTTD may have problems
+to playback some songs without error or that it may happen that subsequent sound
+output is changed in a detrimental way. The latter is especially know to happen
+with the windows "dmusic" sound driver. You may want to try the "win32" music 
+driver, if you have problems with windows' default dmusic driver. Search your
+openttd.cfg for "musicdriver" and change the line to "musidriver = win32".
+Consult also the OpenTTD readme for available options and its known-bugs.txt
 for a more detailed and possibly more up to date description of windows music
 driver issues.
 
