@@ -1,3 +1,13 @@
+OpenMSX 0.3.1
+-------------
+- Change: Add copyright information to build system
+
+- Fix #1210: Typo in readme.
+- Fix #1202: Replace 'Keep on rolling' (temporarily) with 'Big Man Boogie' by Jim Redfarn
+- Fix #1078: Let songs set their assumed defaults (editing by Xrufu)
+
+
+
 OpenMSX 0.3.0 
 -------------
 Feature: 'Unidentifed Flying Scotsman' by imuh3

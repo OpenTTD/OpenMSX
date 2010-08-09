@@ -118,7 +118,7 @@ changes.
 Once all tools are installed, get a checkout of the repository and you can build
 OpenMSX using make. The following targets are available:
 - all: builds all grfs and the obm file
-- install: build and then copy OpenMSX in your OpenTTD data directory. Use
+- install: build and then copy OpenMSX in your OpenTTD music directory. Use
 Makefile.local to specify a different path
 - clean: cleans all generated files
 - mrproper: also cleans generated directories
