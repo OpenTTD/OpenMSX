@@ -17,8 +17,7 @@ Contents
 0 About OpenMSX
 ===============
 
-OpenMSX is an open source replacement for the original Transport Tycoon Deluxe
-(TTD) music. All contributions are licensed under the GPL v2.
+OpenMSX is an open source Music Set for OpenTTD.
 
 
 
@@ -26,42 +25,41 @@ OpenMSX is an open source replacement for the original Transport Tycoon Deluxe
 ============
 
 1. First, make sure that you downloaded and installed at least OpenTTD version
-1.0.0 or later.
+   1.0.0 or later.
 
-2. 
-a) Manually:
-Next, download the latest OpenMSX package. There are a few sources:
-- the development homepage http://bundles.openttdcoop.org/openmsx
-- Look for "OpenMSX" on one of the OpenTTD binaries servers, it is found in the
-"bananas" section:
-http://binaries.openttd.org/bananas/OpenMSX-0.2.1.tar.gz (or possibly with a
-newer version).
+2. Obtain OpenMSX:
+    There are two ways, one easy (ingame download) and one complicated by
+    downloading it yourself and installing it in the right place:
+    a) Via ingame content download:
+        - Go to the content download, and search for OpenMSX; it's found in
+        the baseset category.
 
-Unpack the zip file into the OpenTTD /gm directory (see section 4.2 of the
-OpenTTD readme for a detailed treatise on all data dirs OpenTTD recognizes).
-- An OpenTTD folder in your user account's home directory:
-	Windows:	C:\My Documents (95, 98, ME)
-			C:\Documents and Settings\<username>\My Documents\OpenTTD (2000, XP)
-			C:\Users\<username>\Documents\OpenTTD (Vista, 7)
-	Mac OSX: ~/Documents/OpenTTD
-	Linux:   ~/.openttd
-- The OpenTTD installation directory.
-
-b) Via ingame content download:
-- Go to the content download, and search for OpenMSX; it's found in the baseset
-category.
+    b) Manually:
+        download the latest OpenMSX package from its development homepage:
+        homepage http://dev.openttdcoop.org/openmsx
+        Unpack the zip file into the OpenTTD baseset directory (see section 4.2
+        of the OpenTTD readme for a detailed treatise on all data dirs OpenTTD
+        recognizes).
+        - An OpenTTD folder in your user account's home directory:
+        	Windows:
+        	  C:\My Documents (95, 98, ME)
+            C:\Documents and Settings\<username>\My Documents\OpenTTD (2000, XP)
+            C:\Users\<username>\Documents\OpenTTD (Vista, 7)
+          Mac OSX: ~/Documents/OpenTTD
+          Linux:   ~/.openttd
+        - The OpenTTD installation directory.
 
 3. In the main menu of the game, click the Game Options  button. The Game
-Options  dialog will appear.
+   Options  dialog will appear.
 
 4. Select OpenMSX  from the drop-down list below Base Music set if that's not
-selected already (bottom left of window). Close the window using the × in the
-upper left corner.
+   selected already (bottom left of window). Close the window using the × in the
+   upper left corner.
 
-Now that wasn't so hard, was it? Anyways, if you're having trouble getting
-OpenMSX to work, please file a detailed report on what you did, what error
-messages you got and where you got stuck at our bug tracker at
-http://dev.openttdcoop.org/projects/openmsx or in the tt-forums.
+   Now that wasn't so hard, was it? Anyways, if you're having trouble getting
+   OpenMSX to work, please file a detailed report on what you did, what error
+   messages you got and where you got stuck at our bug tracker at
+   http://dev.openttdcoop.org/projects/openmsx or in the tt-forums.
 
 
 
@@ -71,7 +69,7 @@ http://dev.openttdcoop.org/projects/openmsx or in the tt-forums.
 Depending upon the hardware and the music driver used, OpenTTD may have problems
 to playback some songs without error or that it may happen that subsequent sound
 output is changed in a detrimental way. The latter is especially know to happen
-with the windows "dmusic" sound driver. You may want to try the "win32" music 
+with the windows "dmusic" sound driver. You may want to try the "win32" music
 driver, if you have problems with windows' default dmusic driver. Search your
 openttd.cfg for "musicdriver" and change the line to "musidriver = win32".
 Consult also the OpenTTD readme for available options and its known-bugs.txt
@@ -88,7 +86,7 @@ You can do an anonymous checkout from http://mz.openttdcoop.org/hg/openmsx ,
 e.g. using
    hg clone http://mz.openttdcoop.org/hg/openmsx or obtain the tarball from
 http://bundles.openttdcoop.org/openmsx/releases.
-   
+
 Prerequisites to building OpenMSX:
 - mercurial (only when not building from a tarball, available from
 http://mercurial.selenic.com/wiki/Download?action=show&redirect=BinaryPackages)
@@ -133,7 +131,7 @@ Given the usual case that you modify something within OpenMSX and want to test
 that, a simple 'make install' should suffice and you can immediately test the
 changes ingame, if you selected the nightly version of OpenMSX. Given default
 paths, a 'make install' will overwrite a previous nightly version of OpenMSX.
-Mind to re-start OpenTTD as it needs to re-read the grf files.
+Mind to re-start OpenTTD as it needs to re-read the files.
 
 
 
@@ -162,5 +160,5 @@ Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 OpenMSX is created by the following people (in order of the song list):
 
-programming and coordination   Ingo von Borstel (planetmaker)
-music critic and advisor:      kamnet
+Programming and coordination   Ingo von Borstel (planetmaker)
+Music critic and advisor:      kamnet
