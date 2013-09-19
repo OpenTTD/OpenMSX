@@ -360,7 +360,7 @@ GZIP_FILENAME      := $(TAR_FILENAME).gz
 XZ_FILENAME        := $(TAR_FILENAME).xz
 ZIP_FILENAME       := $(VERSIONED_FILENAME).zip
 MD5_FILENAME       := $(DIR_NAME).md5
-MD5_SRC_FILENAME   := $(DIR_NAME).check.md5
+MD5_SRC_FILENAME   ?= $(DIR_NAME).check.md5
 
 # Creating file with checksum
 %.md5: $(GRF_FILE)

@@ -36,3 +36,6 @@ $(BASE_FILENAME).obm: $(LANG_FILES) $(MIDI_FILES) $(THEMES_FILE) Makefile Makefi
 	$(_E) ""
 
 music: $(BASE_FILENAME).obm
+
+clean::
+	$(_V) -rm $(BASE_FILENAME).obm
