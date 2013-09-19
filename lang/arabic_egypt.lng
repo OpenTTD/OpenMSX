@@ -1,3 +1,2 @@
 ##grflangid 0x14
-
-STR_GENERAL_DESC :OpenMSXمجموعة موسيقى بديلة لـ OpenTTD. متاحة مجانا تحت نظام النسخة الثانية من الرخص الشعبية العامة GNU . لتفاصيل الكاملة اقرا "readme.txt". [{TITLE}]
+STR_GENERAL_DESC        :OpenMSXمجموعة موسيقى بديلة لـ OpenTTD. متاحة مجانا تحت نظام النسخة الثانية من الرخص الشعبية العامة GNU . لتفاصيل الكاملة اقرا "readme.txt". [{TITLE}]
