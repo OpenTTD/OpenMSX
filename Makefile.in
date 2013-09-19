@@ -9,12 +9,12 @@
 # <http://www.gnu.org/licenses/>.
 #
 
-$(BASE_FILENAME).obm: $(LANG_FILES) $(MIDI_FILES) $(THEMES_FILE)
+$(BASE_FILENAME).obm: $(LANG_FILES) $(MIDI_FILES) $(THEMES_FILE) Makefile Makefile.in Makefile.config
 	$(_E) "[Generating] $@"
 	@echo "[metadata]" > $@
 	@echo "name        = $(REPO_NAME)" >> $@
 	@echo "shortname   = $(REPO_SHORTNAME)" >> $@
-	@echo "version     = $(REPO_REVISION)" >> $@
+	@echo "version     = $(NEWGRF_VERSION)" >> $@
 	$(_V) $(SCRIPT_DIR)/translations.sh | sed 's/{TITLE}/$(REPO_TITLE)/' >> $@
 
 	@echo "" >> $@
