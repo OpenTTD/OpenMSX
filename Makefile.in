@@ -9,7 +9,7 @@
 # <http://www.gnu.org/licenses/>.
 #
 
-%.obm: $(LANG_FILES) $(MIDI_FILES) $(THEMES_FILE)
+$(BASE_FILENAME).obm: $(LANG_FILES) $(MIDI_FILES) $(THEMES_FILE)
 	$(_E) "[Generating] $@"
 	@echo "[metadata]" > $@
 	@echo "name        = $(REPO_NAME)" >> $@
