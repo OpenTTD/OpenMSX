@@ -9,7 +9,7 @@
 # <http://www.gnu.org/licenses/>.
 #
 
-$(MAIN_TARGET): $(MAIN_FILENAME_SRC) $(MIDI_FILES) $(DESC_FILENAME) $(README_FILENAME) $(CHANGELOG_FILENAME) $(LICENSE_FILENAME) $(REV_FILENAME)
+%.obm: $(LANG_FILES) $(MIDI_FILES) $(THEMES_FILE)
 	$(_E) "[Generating] $@"
 	@echo "[metadata]" > $@
 	@echo "name        = $(REPO_NAME)" >> $@
@@ -19,15 +19,15 @@ $(MAIN_TARGET): $(MAIN_FILENAME_SRC) $(MIDI_FILES) $(DESC_FILENAME) $(README_FIL
 
 	@echo "" >> $@
 	@echo "[files]" >> $@
-	$(_V) cat $(MAIN_FILENAME_SRC) | scripts/playlist.py >> $@
+	$(_V) cat $(THEMES_FILE) | scripts/playlist.py >> $@
 
 	@echo "" >> $@
 	@echo "[md5s]" >> $@
-	$(_V) cat $(MAIN_FILENAME_SRC) | scripts/sanitize_list.py | scripts/md5list.py >> $@
+	$(_V) cat $(THEMES_FILE) | scripts/sanitize_list.py | scripts/md5list.py >> $@
 
 	@echo "" >> $@
 	@echo "[names]" >> $@
-	$(_V) cat $(MAIN_FILENAME_SRC) | scripts/sanitize_list.py | scripts/namelist.py >> $@
+	$(_V) cat $(THEMES_FILE) | scripts/sanitize_list.py | scripts/namelist.py >> $@
 
 	@echo "" >> $@
 	@echo "[origin]" >> $@
@@ -35,14 +35,4 @@ $(MAIN_TARGET): $(MAIN_FILENAME_SRC) $(MIDI_FILES) $(DESC_FILENAME) $(README_FIL
 	$(_E) "[Done] Basesound successfully generated."
 	$(_E) ""
 
-docs/readme.txt: readme.ptxt $(REV_FILENAME)
-	$(_E) "[Generating] $@"
-	$(_V) cat $< \
-		| sed -e "s/$(REPO_TITLE_DUMMY)/$(REPO_TITLE)/" \
-		| sed -e "s/$(GRF_ID_DUMMY)/$(GRF_ID)/" \
-		| sed -e "s/$(REPO_REVISION_DUMMY)/$(REPO_REVISION)/" \
-		| sed -e "s/$(OUTPUT_FILENAME_DUMMY)/$(OUTPUT_FILENAME)/" \
-		> $@
-	$(_V) cat $(MAIN_FILENAME_SRC) | scripts/sanitize_list.py | scripts/authorlist.py >> $@
-
-	$(_V) [ -z "$(UNIX2DOS)" ] || $(UNIX2DOS) $(UNIX2DOS_FLAGS) $@
+music: $(BASE_FILENAME).obm

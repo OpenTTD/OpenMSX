@@ -7,15 +7,16 @@ Makefile.local
 # And the description file and the grs which are generated automatically
 openmsx.obm
 openmsx-*
+openmsx.tar
 
 # Ignore intermediate files created by the Makefile:
 docs/license.txt
 docs/changelog.txt
 docs/readme.txt
-Makefile.dep
 
 # Ignore directories from bundle creation / install:
 openmsx-nightly*
+openmsx
 
 #The .renum dir
 .renum
@@ -28,6 +29,7 @@ openmsx-nightly*
 *.rej
 *.diff
 *.patch
+*.kate-swp
 
 # Files created by Mac image preview and file browser:
 .DS_Store
