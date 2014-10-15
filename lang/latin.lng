@@ -1,0 +1,5 @@
+##grflangid 0x66
+##plural 0
+##gender m f n mp fp np
+##case abl acc dat gen
+STR_GENERAL_DESC        :OpenTTD fundamentum musicum OpenMSX. Gratis parabile est sub licentiam GPL v2. Si vis inspicere cunctam indicem agnitionum, vide "readme.txt" [{TITLE}]
