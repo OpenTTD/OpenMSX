@@ -1,8 +1,8 @@
 #!/bin/bash
 
 function get_langline() {
-	id=`cat $1 | grep 'grflangid' | cut -c13-16`
-	text=`cat $1 | grep 'STR_GENERAL_DESC' | cut -d: -f2-`
+	id=`cat $1 | grep -a 'grflangid' | cut -c13-16`
+	text=`cat $1 | grep -a 'STR_GENERAL_DESC' | cut -d: -f2-`
 	langcode=""
 	case "$id" in
 		"0x01" ) langcode="en_GB";;
