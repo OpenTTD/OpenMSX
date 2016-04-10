@@ -1,2 +1,5 @@
 ##grflangid 0x38
+##plural 6
+##gender middle male female
+##case nom lok aku vok dat ins gen
 STR_GENERAL_DESC        :OpenMSX zamjenski muzički set za OpenTTD. Dostupan besplatno pod uvjetima GPL v2 licence. Za sve zasluge vidi "readme.txt". [{TITLE}]

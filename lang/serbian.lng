@@ -1,2 +1,5 @@
 ##grflangid 0x0d
+##plural 6
+##gender ženski srednji muški
+##case nom big aku vok dat lok ins gen
 STR_GENERAL_DESC        :OpenMSX skup muzičkih numera za OpenTTD. Slobodno dostupan pod uslovima GPL v2. Detaljne zasluge pogledajte u "readme.txt". [{TITLE}]

@@ -1,2 +1,5 @@
 ##grflangid 0x0e
+##plural 0
+##gender feminine masculine neuter
+##case small
 STR_GENERAL_DESC        :OpenMSX erstattar musikken i OpenTTD. Fritt tilgjengeleg under vilkåra i GNU General Public License versjon 2. For fulle akkrediteringar sjå "readme.txt".OpenMSX erstattar musikken i OpenTTD. Fritt tilgjengeleg under vilkåra i GNU General Public License versjon 2. For fulle akkrediteringar sjå "readme.txt".

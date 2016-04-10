@@ -1,2 +1,4 @@
 ##grflangid 0x2c
+##plural 8
+##case r d t
 STR_GENERAL_DESC        :Projekt zamenjave glasbe OpenMSX za OpenTTD. Na voljo zastonj pod licenco GNU General Public License verzija 2. Za vse zahvale poglejte datoteko "readme.txt". [{TITLE}]

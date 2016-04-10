@@ -1,2 +1,5 @@
 ##grflangid 0x1e
+##plural 2
+##gender n m f
+##case date geniki subs
 STR_GENERAL_DESC        :Σετ αντικατάστασης μουσικής OpenMSX για το OpenTTD. Ελεύθερα διαθέσιμο κάτω από τους όρους χρήσης του GNU General Public έκδοση 2. Για πληρη αναφορά συντελεστών δείτε το "readme.txt". [{TITLE}]

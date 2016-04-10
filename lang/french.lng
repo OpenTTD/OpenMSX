@@ -1,2 +1,4 @@
 ##grflangid 0x03
+##plural 2
+##gender f m m2
 STR_GENERAL_DESC        :Musiques de remplacement OpenMSX pour OpenTTD. Disponible librement selon les termes de la licence GNU General Public Licence version 2. Pour les crédits complets voir "readme.txt". [{TITLE}]
