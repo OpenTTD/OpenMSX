@@ -1,0 +1,5 @@
+##grflangid 0x10
+##plural 6
+##gender p n m f
+##case acc nom pre f abl m n dat p gen
+STR_GENERAL_DESC        :OpenMSX ўяўляе сабой набор музычнага афармлення для OpenTTD. Свабодна распаўсюджваецца ў адпаведнасці з ліцэнзіяй GNU General Public License version 2. Больш падрабязную інфармацыю пра стваральнікаў набору можна даведацца ў дакуменце "readme.txt"[{TITLE}]
