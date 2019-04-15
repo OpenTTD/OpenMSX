@@ -1,32 +1,32 @@
-# Purpose   filename                author                                                                  Title
-theme; tttheme2.mid;                -lucas-;                                                                OpenTTD journey
-old_0; big_man_boogie_redfarn.mid;  Jim Redfarn (http://homepage.ntlworld.com/jim.redfarn/MidiPage.htm);    Big Man Boogie
-old_1; ttsong_iv_imuh3.mid;         imuh3;                                                                  Downtown cab ride
-old_2; modern_motion.mid;           Kyle Timmerman (Mr.Ksoft);                                              Modern Motion
-old_3; busy_schedule.mid;           mimm;                                                                   Busy Schedule
-old_4; the_fast_route.mid;          mimm;                                                                   The Fast Route
-old_5; ttsong_iii_imuh3.mid;        imuh3;                                                                  Skydive
-old_6; train_filled_with_cash.mid;  imuh3;                                                                  Train filled with cash
-old_7; flying_scotsman.mid;         imuh3;                                                                  Unidentifed Flying Scotsman
-old_8; chuggachugga.mid;            imuh3;                                                                  Chugga Chugga Cha-ching
-old_9; the_hobo_redfarn.mid;        Jim Redfarn (http://homepage.ntlworld.com/jim.redfarn/MidiPage.htm);    The Hobo
-new_0; ultimate_run.mid;            Tistou Blomberg;                                                        Ultimate run
-new_1; midnight_snow_run.mid;       Tistou Blomberg;                                                        Midnight snow run
-new_2; run_for_your_life.mid;       Tistou Blomberg;                                                        Excitement! Run for your life
-new_3; coconut_run2.mid;            Tistou Blomberg;                                                        Coconut run 2
-new_4; harp_harmony.mid;            Tistou Blomberg;                                                        Harp harmony 'n humor
-new_5; mighty_giant_run.mid;        Tistou Blomberg;                                                        Mighty giant run
-new_6; wood_whistles.mid;           Tistou Blomberg;                                                        Wood whistles
-new_7; linns_basket.mid;            Tistou Blomberg;                                                        Linn's basket of treats
-new_8; relax_song.mid;              Tistou Blomberg;                                                        Plain simple relax song
-new_9; chemistry_lab.mid;           Tistou Blomberg;                                                        Deep down chemistry lab
-ezy_0; 5432gone_redfarn.mid;        Jim Redfarn (http://homepage.ntlworld.com/jim.redfarn/MidiPage.htm);    5 4 3 2 .. Gone
-ezy_1; boogi_marabi_redfarn.mid;    Jim Redfarn (http://homepage.ntlworld.com/jim.redfarn/MidiPage.htm);    Boogie Marabi
-ezy_2; moo_redfarn.mid;             Jim Redfarn (http://homepage.ntlworld.com/jim.redfarn/MidiPage.htm) inspired by Cow Cow Boogie by Benny Carter, Gene de Paul, and Don Raye; Moo Moo Boogie
-ezy_3; say_what_redfarn.mid;        Jim Redfarn (http://homepage.ntlworld.com/jim.redfarn/MidiPage.htm);    Say What
-ezy_4; be_sharp_bw_redfarn.mid;     Jim Redfarn (http://homepage.ntlworld.com/jim.redfarn/MidiPage.htm);    Be Sharp Boogie
-ezy_5; careless_perc_redfarn.mid;   Jim Redfarn (http://homepage.ntlworld.com/jim.redfarn/MidiPage.htm) traditional song; Careless Love
-ezy_6; mosey_along_redfarn.mid;     Jim Redfarn (http://homepage.ntlworld.com/jim.redfarn/MidiPage.htm);    Mosey Along
-ezy_7; slow_neasy_redfarn.mid;      Jim Redfarn (http://homepage.ntlworld.com/jim.redfarn/MidiPage.htm);    Slow and Easy
-ezy_8; city_blues_redfarn.mid;      Jim Redfarn (http://homepage.ntlworld.com/jim.redfarn/MidiPage.htm);    City Blues
-ezy_9; no_work_song_redfarn.mid;    Jim Redfarn (http://homepage.ntlworld.com/jim.redfarn/MidiPage.htm);    No Work Song
+# Purpose   filename                author                      Title
+theme; tttheme2.mid;                -lucas-;                    OpenTTD journey
+old_0; keep_on_rolling.mid;         Trolley Trev;               Keep on Rolling
+old_1; ttsong_iv_imuh3.mid;         imuh3;                      Downtown cab ride
+old_2; modern_motion.mid;           Kyle Timmerman (Mr.Ksoft);  Modern Motion
+old_3; busy_schedule.mid;           mimm;                       Busy Schedule
+old_4; the_fast_route.mid;          mimm;                       The Fast Route
+old_5; ttsong_iii_imuh3.mid;        imuh3;                      Skydive
+old_6; train_filled_with_cash.mid;  imuh3;                      Train filled with cash
+old_7; flying_scotsman.mid;         imuh3;                      Unidentifed Flying Scotsman
+old_8; chuggachugga.mid;            imuh3;                      Chugga Chugga Cha-ching
+old_9; the_hobo_redfarn.mid;        Jim Redfarn;                The Hobo
+new_0; ultimate_run.mid;            Tistou Blomberg;            Ultimate run
+new_1; midnight_snow_run.mid;       Tistou Blomberg;            Midnight snow run
+new_2; run_for_your_life.mid;       Tistou Blomberg;            Excitement! Run for your life
+new_3; coconut_run2.mid;            Tistou Blomberg;            Coconut run 2
+new_4; harp_harmony.mid;            Tistou Blomberg;            Harp harmony 'n humor
+new_5; mighty_giant_run.mid;        Tistou Blomberg;            Mighty giant run
+new_6; wood_whistles.mid;           Tistou Blomberg;            Wood whistles
+new_7; linns_basket.mid;            Tistou Blomberg;            Linn's basket of treats
+new_8; relax_song.mid;              Tistou Blomberg;            Plain simple relax song
+new_9; chemistry_lab.mid;           Tistou Blomberg;            Deep down chemistry lab
+ezy_0; 5432gone_redfarn.mid;        Jim Redfarn;                5 4 3 2 .. Gone
+ezy_1; boogi_marabi_redfarn.mid;    Jim Redfarn;                Boogie Marabi
+ezy_2; moo_redfarn.mid;             Jim Redfarn, inspired by Cow Cow Boogie by Benny Carter, Gene de Paul, and Don Raye; Moo Moo Boogie
+ezy_3; say_what_redfarn.mid;        Jim Redfarn;                Say What
+ezy_4; be_sharp_bw_redfarn.mid;     Jim Redfarn;                Be Sharp Boogie
+ezy_5; careless_perc_redfarn.mid;   Jim Redfarn, traditional song; Careless Love
+ezy_6; mosey_along_redfarn.mid;     Jim Redfarn;                Mosey Along
+ezy_7; slow_neasy_redfarn.mid;      Jim Redfarn;                Slow and Easy
+ezy_8; city_blues_redfarn.mid;      Jim Redfarn;                City Blues
+ezy_9; no_work_song_redfarn.mid;    Jim Redfarn;                No Work Song
