@@ -1,3 +1,10 @@
+OpenMSX 0.3.2
+-------------
+- Update: Optimized MIDI data for all songs to reduce file size
+- Update: Replace 'Big Man Boogie' with fixed version of 'Keep on Rolling'
+
+
+
 OpenMSX 0.3.1
 -------------
 - Change: Add copyright information to build system
