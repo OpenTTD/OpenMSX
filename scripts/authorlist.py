@@ -18,8 +18,8 @@ while 1:
     if data != '':
         # do some processing of the contents of
         # the data variable
-        separate = string.split(data,";")
-        print '%-30s %s' % (separate[1]+":", separate[2])
+        separate = data.split(';')
+        print('%-30s %s' % (separate[1]+":", separate[2]))
         # end of data processing command group
         #        sys.stdout.write(res)
     else:
