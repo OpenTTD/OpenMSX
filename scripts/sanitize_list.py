@@ -17,19 +17,19 @@ while 1:
     data = sys.stdin.readline()
     if data != '':
         # leave out all comment lines (lines starting with '#')
-        comment_pos = string.find(data,'#')
+        comment_pos = data.find('#')
         if comment_pos == 0:
             continue
         # separate the single entries by ';'
-        separate = string.split(data,";")
+        separate = data.split(';')
         if len(separate) != 4:
             continue
         res = ""
         for str in separate:
             if res != '':
-                res = res + ";" + string.strip(str)
+                res = res + ";" + str.strip()
             else:
-                res = string.strip(str)
+                res = str.strip()
         # end of data processing command group
         res = res + "\n"
         sys.stdout.write(res)
@@ -38,6 +38,6 @@ while 1:
         break
 
 def authorlist(mystr):
-    separate = string.split()
+    separate = separate.split()
     for str in separate:
-        print string.strip(str)
+        print(str.strip())

@@ -18,14 +18,14 @@ while 1:
     data = sys.stdin.readline()
     if data != '':
         # leave out all comment lines (lines starting with '#')
-        comment_pos = string.find(data,'#')
+        comment_pos = data.find('#')
         if comment_pos == 0:
             continue
         # separate the single entries by ';'
-        separate = string.split(data,";")
+        separate = data.split(';')
         if len(separate) != 4:
             continue
-        res = res + " src/" + string.strip(separate[1])
+        res = res + " src/" + separate[1].strip()
     else:
         sys.stdout.write(res)
         sys.stdout.flush()
