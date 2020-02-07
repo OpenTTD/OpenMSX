@@ -21,7 +21,7 @@ while 1:
         separate = string.split(data,";")
         print '%-30s %s' % (separate[1]+":", separate[2])
         # end of data processing command group
-		#        sys.stdout.write(res)
+        #        sys.stdout.write(res)
     else:
         sys.stdout.flush()
         break
