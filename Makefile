@@ -116,7 +116,7 @@ AWK            ?= awk
 
 GREP           ?= grep
 
-HG             ?= $(shell hg st >/dev/null 2>/dev/null && which hg 2>/dev/null)
+GIT            ?= $(shell git status >/dev/null 2>/dev/null && which git 2>/dev/null)
 
 PYTHON         ?= python
 
@@ -133,24 +133,22 @@ UNIX2DOS_FLAGS ?= $(shell [ -n $(UNIX2DOS) ] && $(UNIX2DOS) -q --version 2>/dev/
 # This must be conditional declarations, or building from the tar.gz won't work anymore
 DEFAULT_BRANCH_NAME ?=
 
-# HG revision
-REPO_REVISION  ?= $(shell $(HG) id -n | cut -d+ -f1)
-
-# HG Hash
-REPO_HASH            ?= $(shell $(HG) id -i | cut -d+ -f1)
+# Git hash
+REPO_HASH      ?= $(shell $(GIT) log -n1 --pretty="format:%h")
+# Git hash again (same as REPO_HASH, Git has no revisions)
+REPO_REVISION  := $(REPO_HASH)
 
 # Days of commit since 2000-1-1 00-00
-REPO_DATE            ?= $(shell $(HG) log -r$(REPO_HASH) --template='{time|shortdate}')
-REPO_DAYS_SINCE_2000 ?= $(shell $(PYTHON) -c "from datetime import date; print (date(`echo "$(REPO_DATE)" | sed s/-/,/g | sed s/,0/,/g`)-date(2000,1,1)).days")
+REPO_DATE            ?= $(shell $(GIT) log -n1 --pretty="format:%cs")
+REPO_DATE_COMMAS     ?= $(shell echo "$(REPO_DATE)" | sed s/-/,/g | sed s/,0/,/g)
+REPO_DAYS_SINCE_2000 ?= $(shell $(PYTHON) -c "from datetime import date; print ( (date($(REPO_DATE_COMMAS)) - date(2000,1,1)).days)")
 
-# Whether there are local changes
-REPO_MODIFIED  ?= $(shell [ "`$(HG) id | cut -c13`" = "+" ] && echo "M" || echo "")
+TEMP_GITSTATUS ?= $(shell $(GIT) status --porcelain=v2 | grep "^[12]")
+# Whether there are local changes ("M" if modified, "" if not)
+REPO_MODIFIED  ?= $(shell [ -z "$TEMP_GITSTATUS" ] && echo "" || echo "M")
 
 # Branch name
-REPO_BRANCH    ?= $(shell $(HG) id -b | sed "s/default/$(DEFAULT_BRANCH_NAME)/")
-
-# Any tag which is not 'tip'
-REPO_TAGS      ?= $(shell $(HG) id -t | grep -v "tip")
+REPO_BRANCH    ?= $(shell $(GIT) status -b --porcelain=v2 | grep "^# branch\.head" | tail -c7)
 
 # Filename addition, if we're not building the default branch
 REPO_BRANCH_STRING ?= $(shell if [ "$(REPO_BRANCH)" = "$(DEFAULT_BRANCH_NAME)" ]; then echo ""; else echo "-$(REPO_BRANCH)"; fi)
@@ -159,7 +157,10 @@ REPO_BRANCH_STRING ?= $(shell if [ "$(REPO_BRANCH)" = "$(DEFAULT_BRANCH_NAME)" ]
 NEWGRF_VERSION ?= $(shell let x="$(REPO_DAYS_SINCE_2000) + 65536 * $(REPO_BRANCH_VERSION)"; echo "$$x")
 
 # The shown version is either a tag, or in the absence of a tag the revision.
-REPO_VERSION_STRING ?= $(shell [ -n "$(REPO_TAGS)" ] && echo $(REPO_TAGS)$(REPO_MODIFIED) || echo $(REPO_DATE)$(REPO_BRANCH_STRING) \($(NEWGRF_VERSION):$(REPO_HASH)$(REPO_MODIFIED)\))
+REPO_VERSION_STRING ?= $(shell echo $(REPO_DATE)$(REPO_BRANCH_STRING) \($(NEWGRF_VERSION):$(REPO_HASH)$(REPO_MODIFIED)\))
+
+# Git tags are not relevant
+REPO_TAGS      ?= $(shell echo "")
 
 # The title consists of name and version
 REPO_TITLE     ?= $(REPO_NAME) $(REPO_VERSION_STRING)
@@ -410,7 +411,7 @@ clean::
 # Bundle source targets
 # target 'bundle_src which builds source bundle
 ################################################################
-RE_FILES_NO_SRC_BUNDLE = ^.devzone|^.hg
+RE_FILES_NO_SRC_BUNDLE = ^.devzone|^.git
 
 check: $(MD5_FILENAME)
 	$(_V) if [ -f $(MD5_SRC_FILENAME) ]; then echo "[CHECKING md5sums]"; else echo "Required file '$(MD5_SRC_FILENAME)' which to test against not found!"; false; fi
@@ -419,7 +420,7 @@ check: $(MD5_FILENAME)
 
 $(DIR_NAME_SRC).tar: $(DIR_NAME_SRC)
 	$(_E) "[BUNDLE SRC]"
-	$(_V) $(HG) archive -t tar $<.tar
+	$(_V) $(GIT) archive --format=tar $<.tar
 	$(_V) $(TAR) -uf $@ $^
 
 bundle_src: $(DIR_NAME_SRC).tar
@@ -444,10 +445,10 @@ Makefile.fordist:
 	$(_V) echo 'REPO_BRANCH := $(REPO_BRANCH)' >> $@
 	$(_V) echo 'REPO_MODIFIED := $(REPO_MODIFIED)' >> $@
 	$(_V) echo 'REPO_TAGS    := $(REPO_TAGS)'    >> $@
-	$(_V) echo 'HG := :' >> $@
+	$(_V) echo 'GIT := :' >> $@
 	$(_V) echo 'PYTHON := :' >> $@
 
-ifneq ("$(strip $(HG))",":")
+ifneq ("$(strip $(GIT))",":")
 $(DIR_NAME_SRC): $(MD5_SRC_FILENAME) Makefile.fordist
 	$(_E) "[ASSEMBLING] $(DIR_NAME_SRC)"
 	$(_V)-rm -rf $@
@@ -456,7 +457,7 @@ $(DIR_NAME_SRC): $(MD5_SRC_FILENAME) Makefile.fordist
 	$(_V) cp $(CP_FLAGS) Makefile.fordist $@/Makefile.dist
 else
 $(DIR_NAME_SRC):
-	$(_E) "Source releases can only be made from a hg checkout."
+	$(_E) "Source releases can only be made from a git checkout."
 	$(_V) false
 endif
 
