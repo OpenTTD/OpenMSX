@@ -36,85 +36,97 @@ OpenMSX is an open source Music Set for OpenTTD.
 
     b) Manually:
         download the latest OpenMSX package from its development homepage:
-        homepage http://dev.openttdcoop.org/openmsx
-        Unpack the zip file into the OpenTTD baseset directory (see section 4.2
+        homepage: https://github.com/OpenTTD/OpenMSX
+        Unpack the zip file into the OpenTTD 'baseset' directory (see section 4.2
         of the OpenTTD readme for a detailed treatise on all data dirs OpenTTD
         recognizes).
         - An OpenTTD folder in your user account's home directory:
-        	Windows:
-        	  C:\My Documents (95, 98, ME)
-            C:\Documents and Settings\<username>\My Documents\OpenTTD (2000, XP)
-            C:\Users\<username>\Documents\OpenTTD (Vista, 7)
-          Mac OSX: ~/Documents/OpenTTD
-          Linux:   ~/.openttd
+            Windows:
+              C:\My Documents (95, 98, ME)
+              C:\Documents and Settings\<username>\My Documents\OpenTTD (2000, XP)
+              C:\Users\<username>\Documents\OpenTTD (Vista, 7)
+          macOS:     ~/Documents/OpenTTD
+          GNU/Linux: ~/.openttd
         - The OpenTTD installation directory.
 
-3. In the main menu of the game, click the Game Options  button. The Game
-   Options  dialog will appear.
+3. In the main menu of the game, click the Game Options button. The Game
+   Options dialog will appear.
 
-4. Select OpenMSX  from the drop-down list below Base Music set if that's not
+4. Select OpenMSX from the drop-down list below Base Music set if that's not
    selected already (bottom left of window). Close the window using the × in the
    upper left corner.
 
    Now that wasn't so hard, was it? Anyways, if you're having trouble getting
    OpenMSX to work, please file a detailed report on what you did, what error
    messages you got and where you got stuck at our bug tracker at
-   http://dev.openttdcoop.org/projects/openmsx or in the tt-forums.
+       https://github.com/OpenTTD/OpenSFX/issues
+   or at
+       https://www.tt-forums.net
 
+5. Music might not start automatically. If music does not play yet,
+   start a game and open the music box from the toolbar.
+   Here you can control the volume, and start and stop the music.
 
 
 2 Troubleshooting and bad sound output
 ======================================
 
+(Windows)
 Depending upon the hardware and the music driver used, OpenTTD may have problems
 to playback some songs without error or that it may happen that subsequent sound
 output is changed in a detrimental way. The latter is especially know to happen
 with the windows "dmusic" sound driver. You may want to try the "win32" music
-driver, if you have problems with windows' default dmusic driver. Search your
+driver, if you have problems with Windows' default dmusic driver. Search your
 openttd.cfg for "musicdriver" and change the line to "musidriver = win32".
 Consult also the OpenTTD readme for available options and its known-bugs.txt
-for a more detailed and possibly more up to date description of windows music
+for a more detailed and possibly more up to date description of Windows music
 driver issues.
 
+(GNU/Linux)
+If you cannot get music to play, it might be because your system does not
+support MIDI playback yet.
+Please refer to the manual of your Linux distribution to learn about how
+to get MIDI files to play. We recommend to install TiMidity++.
 
 
 3 Contributing and compiling from source
 ========================================
 
-The OpenMSX source is available in a Mercurial repository or as gzip'ed tarball.
-You can do an anonymous checkout from http://mz.openttdcoop.org/hg/openmsx ,
+The OpenMSX source is available in a Git repository or as gzip'ed tarball.
+You can do a clone from
+   https://github.com/OpenTTD/OpenMSX
 e.g. using
-   hg clone http://mz.openttdcoop.org/hg/openmsx or obtain the tarball from
-http://bundles.openttdcoop.org/openmsx/releases.
+   git clone https://github.com/OpenTTD/OpenMSX
+or obtain the tarball from
+   https://www.openttd.org/downloads/openmsx-releases/latest.html
 
 Prerequisites to building OpenMSX:
-- mercurial (only when not building from a tarball, available from
-http://mercurial.selenic.com/wiki/Download?action=show&redirect=BinaryPackages)
-- md5sum (linux, mingw) or md5 (mac)
-- some gnu utils: make, cat, sed
+- Git (only when not building from a tarball)
+- md5sum (Linux, MinGW) or md5 (macOS)
+- some GNU utils: make, cat, sed
 - unix2dos for convenient conversion of the text files
-- python (if you use mercurial, you'll have python)
+- Python
 and you might additionally want a text editor of your choice and possibly a
 programme capable of creating and editing midi files.
 
-On Windows: we advise to get a mingw development environment, download mercurial
-from the sources mentioned above) For more detailed instructions see our guide
+On Windows: We advise to get a MinGW development environment.
+For more detailed instructions, see our guide
 at http://dev.openttdcoop.org/projects/home/wiki and the very extensive and
-detailed installation instructions on the mingw wiki at
+detailed installation instructions on the MinGW wiki at
 http://www.mingw.org/wiki/Getting_Started
 
-On Linux: your system should already have most tools, you'll probably only
-mercurial available from the source mentioned above. For installation
-instructions concerning mercurial refer to the manual of your distribution.
+On GNU/Linux: Your system should already have most tools, you'll probably only
+Git available from the source mentioned above. For installation
+instructions concerning Git, refer to the manual of your distribution.
 
-On Mac: Install the developers tools. Mercurial is easiest insalled via
-macports: sudo port install mercurial
+On macOS: Install the developers tools. Git is easiest insalled via
+macports: sudo port install git
 
-The use of mercurial is strongly encouraged as only that allows to keep track of
+The use of Git is strongly encouraged as only that allows to keep track of
 changes.
 
 Once all tools are installed, get a checkout of the repository and you can build
-OpenMSX using make. The following targets are available:
+OpenMSX using 'make'. The following targets are available:
 - all: builds all grfs and the obm file
 - install: build and then copy OpenMSX in your OpenTTD music directory. Use
 Makefile.local to specify a different path
