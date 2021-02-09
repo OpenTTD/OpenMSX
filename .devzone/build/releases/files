@@ -1,8 +1,0 @@
-R;%{BUILD}/*.zip
-5;%{BUILD}/*.tar.gz
-%{BUILD}/*.md5
-%{BUILD}/*build.log
-E;%{BUILD}/*build.err.log
-%{BUILD}/docs/readme.txt
-%{BUILD}/docs/changelog.txt
-L;%{BUILD}/*.obm
