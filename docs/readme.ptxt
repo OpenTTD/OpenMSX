@@ -119,7 +119,7 @@ On GNU/Linux: Your system should already have most tools, you'll probably only
 Git available from the source mentioned above. For installation
 instructions concerning Git, refer to the manual of your distribution.
 
-On macOS: Install the developers tools. Git is easiest insalled via
+On macOS: Install the developers tools. Git is easiest installed via
 macports: sudo port install git
 
 The use of Git is strongly encouraged as only that allows to keep track of
