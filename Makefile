@@ -138,10 +138,20 @@ REPO_HASH      ?= $(shell $(GIT) log -n1 --pretty="format:%h")
 # Git hash again (same as REPO_HASH, Git has no revisions)
 REPO_REVISION  := $(REPO_HASH)
 
-# Days of commit since 2000-1-1 00-00
-REPO_DATE            ?= $(shell $(GIT) log -n1 --pretty="format:%cs")
-REPO_DATE_COMMAS     ?= $(shell echo "$(REPO_DATE)" | sed s/-/,/g | sed s/,0/,/g)
-REPO_DAYS_SINCE_2000 ?= $(shell $(PYTHON) -c "from datetime import date; print ( (date($(REPO_DATE_COMMAS)) - date(2000,1,1)).days)")
+REPO_VERSIONS := $(shell AWK="$(AWK)" "./findversion.sh")
+
+# Use autodetected revisions
+REPO_VERSION ?= $(shell echo "$(REPO_VERSIONS)" | cut -f 1 -d'	')
+REPO_DATE ?= $(shell echo "$(REPO_VERSIONS)" | cut -f 2 -d'	')
+REPO_HASH ?= $(shell echo "$(REPO_VERSIONS)" | cut -f 4 -d'	')
+
+# Days of commit since 2000-01-01. REPO_DATE is in format YYYYMMDD.
+REPO_DATE_YEAR := $(shell echo "${REPO_DATE}" | cut -b1-4)
+REPO_DATE_MONTH := $(shell echo "${REPO_DATE}" | cut -b5-6 | sed s/^0//)
+REPO_DATE_DAY := $(shell echo "${REPO_DATE}" | cut -b7-8 | sed s/^0//)
+REPO_DAYS_SINCE_2000 := $(shell $(PYTHON) -c "from datetime import date; print( (date($(REPO_DATE_YEAR),$(REPO_DATE_MONTH),$(REPO_DATE_DAY))-date(2000,1,1)).days)")
+
+REPO_TAGS ?= $(REPO_VERSION)
 
 TEMP_GITSTATUS ?= $(shell $(GIT) status --porcelain=v2 | grep "^[12]")
 # Whether there are local changes ("M" if modified, "" if not)
@@ -157,10 +167,7 @@ REPO_BRANCH_STRING ?= $(shell if [ "$(REPO_BRANCH)" = "$(DEFAULT_BRANCH_NAME)" ]
 NEWGRF_VERSION ?= $(shell let x="$(REPO_DAYS_SINCE_2000) + 65536 * $(REPO_BRANCH_VERSION)"; echo "$$x")
 
 # The shown version is either a tag, or in the absence of a tag the revision.
-REPO_VERSION_STRING ?= $(shell echo $(REPO_DATE)$(REPO_BRANCH_STRING) \($(NEWGRF_VERSION):$(REPO_HASH)$(REPO_MODIFIED)\))
-
-# Git tags are not relevant
-REPO_TAGS      ?= $(shell echo "")
+REPO_VERSION_STRING ?= $(shell echo $(REPO_DATE)$(REPO_BRANCH_STRING) \($(NEWGRF_VERSION):$(REPO_HASH)\))
 
 # The title consists of name and version
 REPO_TITLE     ?= $(REPO_NAME) $(REPO_VERSION_STRING)
@@ -350,7 +357,7 @@ GRFID_FLAGS    ?= -m
 # followed by an M, if the source repository is not a clean version.
 
 # Common to all filenames
-FILE_VERSION_STRING ?= $(shell [ -n "$(REPO_TAGS)" ] && echo "$(REPO_TAGS)$(REPO_MODIFIED)" || echo "$(REPO_BRANCH_STRING)$(NEWGRF_VERSION)$(REPO_MODIFIED)")
+FILE_VERSION_STRING ?= $(shell [ -n "$(REPO_TAGS)" ] && echo "$(REPO_TAGS)" || echo "$(REPO_BRANCH_STRING)$(NEWGRF_VERSION)")
 DIR_NAME           := $(shell [ -n "$(REPO_TAGS)" ] && echo $(BASE_FILENAME)-$(FILE_VERSION_STRING) || echo $(BASE_FILENAME))
 VERSIONED_FILENAME := $(BASE_FILENAME)-$(FILE_VERSION_STRING)
 DIR_NAME_SRC       := $(VERSIONED_FILENAME)-source
@@ -420,7 +427,7 @@ check: $(MD5_FILENAME)
 
 $(DIR_NAME_SRC).tar: $(DIR_NAME_SRC)
 	$(_E) "[BUNDLE SRC]"
-	$(_V) $(GIT) archive --format=tar $<.tar
+	$(_V) $(GIT) archive --format=tar HEAD | tar -x -C $(DIR_NAME_SRC)
 	$(_V) $(TAR) -uf $@ $^
 
 bundle_src: $(DIR_NAME_SRC).tar
