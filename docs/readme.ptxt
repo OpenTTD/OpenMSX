@@ -59,7 +59,7 @@ OpenMSX is an open source Music Set for OpenTTD.
    Now that wasn't so hard, was it? Anyways, if you're having trouble getting
    OpenMSX to work, please file a detailed report on what you did, what error
    messages you got and where you got stuck at our bug tracker at
-       https://github.com/OpenTTD/OpenSFX/issues
+       https://github.com/OpenTTD/OpenMSX/issues
    or at
        https://www.tt-forums.net
 
@@ -86,7 +86,7 @@ driver issues.
 If you cannot get music to play, it might be because your system does not
 support MIDI playback yet.
 Please refer to the manual of your Linux distribution to learn about how
-to get MIDI files to play. We recommend to install TiMidity++.
+to get MIDI files to play.
 
 
 3 Contributing and compiling from source
@@ -115,9 +115,9 @@ at http://dev.openttdcoop.org/projects/home/wiki and the very extensive and
 detailed installation instructions on the MinGW wiki at
 http://www.mingw.org/wiki/Getting_Started
 
-On GNU/Linux: Your system should already have most tools, you'll probably only
-Git available from the source mentioned above. For installation
-instructions concerning Git, refer to the manual of your distribution.
+On GNU/Linux: Your system probably has most of these things installed,
+but if not, all of these things should be easy to install if your system
+has a software package manager.
 
 On macOS: Install the developers tools. Git is easiest installed via
 macports: sudo port install git
