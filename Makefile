@@ -167,7 +167,7 @@ REPO_BRANCH_STRING ?= $(shell if [ "$(REPO_BRANCH)" = "$(DEFAULT_BRANCH_NAME)" ]
 NEWGRF_VERSION ?= $(shell let x="$(REPO_DAYS_SINCE_2000) + 65536 * $(REPO_BRANCH_VERSION)"; echo "$$x")
 
 # The shown version is either a tag, or in the absence of a tag the revision.
-REPO_VERSION_STRING ?= $(shell echo $(REPO_DATE)$(REPO_BRANCH_STRING) \($(NEWGRF_VERSION):$(REPO_HASH)\))
+REPO_VERSION_STRING ?= $(shell [ -n "$(REPO_TAGS)" ] && echo $(REPO_TAGS) || echo $(REPO_DATE)$(REPO_BRANCH_STRING) \($(NEWGRF_VERSION):$(REPO_HASH)\))
 
 # The title consists of name and version
 REPO_TITLE     ?= $(REPO_NAME) $(REPO_VERSION_STRING)
