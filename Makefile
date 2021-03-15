@@ -121,7 +121,7 @@ GIT            ?= $(shell git status >/dev/null 2>/dev/null && which git 2>/dev/
 PYTHON         ?= python
 
 UNIX2DOS       ?= $(shell which unix2dos 2>/dev/null)
-UNIX2DOS_FLAGS ?= $(shell [ -n $(UNIX2DOS) ] && $(UNIX2DOS) -q --version 2>/dev/null && echo "-q" || echo "")
+UNIX2DOS_FLAGS ?= $(shell [ -n $(UNIX2DOS) ] && $(UNIX2DOS) -q --version 1>&2 2>/dev/null && echo "-q" || echo "")
 
 ################################################################
 # Get the Repository revision, tags and the modified status
