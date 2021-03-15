@@ -76,7 +76,7 @@
 # BZIP           = bzip2
 # CC             = gcc
 # AWK            = awk
-# HG             = hg
+# GIT            = git
 # MAKE           = make
 # UNIX2DOS       = $(shell [ `which unix2dos 2>/dev/null` ] && echo "unix2dos" || echo "")
 # MD5SUM         = $(shell [ "$(OSTYPE)" = "Darwin" ] && echo "md5 -r" || echo "md5sum")

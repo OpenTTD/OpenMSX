@@ -19,10 +19,10 @@ SHELL := /bin/bash
 ##################################################################
 
 # Definition of the grfs
-REPO_NAME           ?= My NewGRF
+REPO_NAME           ?= OpenMSX
 
 # This is the filename part common to the grf file, main source file and the tar name
-BASE_FILENAME       ?= mynewgrf
+BASE_FILENAME       ?= openmsx
 
 # Documentation files
 DOC_FILES ?= docs/readme.txt docs/license.txt docs/changelog.txt
@@ -116,50 +116,41 @@ AWK            ?= awk
 
 GREP           ?= grep
 
-HG             ?= $(shell hg st >/dev/null 2>/dev/null && which hg 2>/dev/null)
+GIT            ?= $(shell git status >/dev/null 2>/dev/null && which git 2>/dev/null)
 
 PYTHON         ?= python
 
 UNIX2DOS       ?= $(shell which unix2dos 2>/dev/null)
-UNIX2DOS_FLAGS ?= $(shell [ -n $(UNIX2DOS) ] && $(UNIX2DOS) -q --version 2>/dev/null && echo "-q" || echo "")
+UNIX2DOS_FLAGS ?= $(shell [ -n $(UNIX2DOS) ] && $(UNIX2DOS) -q --version 1>&2 2>/dev/null && echo "-q" || echo "")
 
 ################################################################
-# Get the Repository revision, tags and the modified status
-# The displayed name within OpenTTD / TTDPatch
-# Looks like either
-# a nightly build:                 GRF's Name nightly-r51
-# a release build (taged version): GRF's Name 0.1
+#
+# Working copy / bundle version detection.
+#
 ################################################################
-# This must be conditional declarations, or building from the tar.gz won't work anymore
-DEFAULT_BRANCH_NAME ?=
 
-# HG revision
-REPO_REVISION  ?= $(shell $(HG) id -n | cut -d+ -f1)
+# Always run version detection, so we always have an accurate modified
+# flag
+REPO_VERSIONS := $(shell AWK="$(AWK)" "./findversion.sh")
 
-# HG Hash
-REPO_HASH            ?= $(shell $(HG) id -i | cut -d+ -f1)
+# Use autodetected revisions
+REPO_VERSION ?= $(shell echo "$(REPO_VERSIONS)" | cut -f 1 -d'	')
+REPO_DATE ?= $(shell echo "$(REPO_VERSIONS)" | cut -f 2 -d'	')
+REPO_HASH ?= $(shell echo "$(REPO_VERSIONS)" | cut -f 4 -d'	')
 
-# Days of commit since 2000-1-1 00-00
-REPO_DATE            ?= $(shell $(HG) log -r$(REPO_HASH) --template='{time|shortdate}')
-REPO_DAYS_SINCE_2000 ?= $(shell $(PYTHON) -c "from datetime import date; print (date(`echo "$(REPO_DATE)" | sed s/-/,/g | sed s/,0/,/g`)-date(2000,1,1)).days")
+# Days of commit since 2000-01-01. REPO_DATE is in format YYYYMMDD.
+REPO_DATE_YEAR := $(shell echo "${REPO_DATE}" | cut -b1-4)
+REPO_DATE_MONTH := $(shell echo "${REPO_DATE}" | cut -b5-6 | sed s/^0//)
+REPO_DATE_DAY := $(shell echo "${REPO_DATE}" | cut -b7-8 | sed s/^0//)
+REPO_DAYS_SINCE_2000 := $(shell $(PYTHON) -c "from datetime import date; print( (date($(REPO_DATE_YEAR),$(REPO_DATE_MONTH),$(REPO_DATE_DAY))-date(2000,1,1)).days)")
 
-# Whether there are local changes
-REPO_MODIFIED  ?= $(shell [ "`$(HG) id | cut -c13`" = "+" ] && echo "M" || echo "")
-
-# Branch name
-REPO_BRANCH    ?= $(shell $(HG) id -b | sed "s/default/$(DEFAULT_BRANCH_NAME)/")
-
-# Any tag which is not 'tip'
-REPO_TAGS      ?= $(shell $(HG) id -t | grep -v "tip")
-
-# Filename addition, if we're not building the default branch
-REPO_BRANCH_STRING ?= $(shell if [ "$(REPO_BRANCH)" = "$(DEFAULT_BRANCH_NAME)" ]; then echo ""; else echo "-$(REPO_BRANCH)"; fi)
+REPO_TAGS      ?= $(REPO_VERSION)
 
 # The version reported to OpenTTD. Usually days since 2000 + branch offset
 NEWGRF_VERSION ?= $(shell let x="$(REPO_DAYS_SINCE_2000) + 65536 * $(REPO_BRANCH_VERSION)"; echo "$$x")
 
 # The shown version is either a tag, or in the absence of a tag the revision.
-REPO_VERSION_STRING ?= $(shell [ -n "$(REPO_TAGS)" ] && echo $(REPO_TAGS)$(REPO_MODIFIED) || echo $(REPO_DATE)$(REPO_BRANCH_STRING) \($(NEWGRF_VERSION):$(REPO_HASH)$(REPO_MODIFIED)\))
+REPO_VERSION_STRING ?= $(shell [ -n "$(REPO_TAGS)" ] && echo $(REPO_TAGS) || echo $(REPO_DATE)$(REPO_BRANCH_STRING) \($(NEWGRF_VERSION):$(REPO_HASH)\))
 
 # The title consists of name and version
 REPO_TITLE     ?= $(REPO_NAME) $(REPO_VERSION_STRING)
@@ -349,7 +340,7 @@ GRFID_FLAGS    ?= -m
 # followed by an M, if the source repository is not a clean version.
 
 # Common to all filenames
-FILE_VERSION_STRING ?= $(shell [ -n "$(REPO_TAGS)" ] && echo "$(REPO_TAGS)$(REPO_MODIFIED)" || echo "$(REPO_BRANCH_STRING)$(NEWGRF_VERSION)$(REPO_MODIFIED)")
+FILE_VERSION_STRING ?= $(shell [ -n "$(REPO_TAGS)" ] && echo "$(REPO_TAGS)" || echo "$(REPO_BRANCH_STRING)$(NEWGRF_VERSION)")
 DIR_NAME           := $(shell [ -n "$(REPO_TAGS)" ] && echo $(BASE_FILENAME)-$(FILE_VERSION_STRING) || echo $(BASE_FILENAME))
 VERSIONED_FILENAME := $(BASE_FILENAME)-$(FILE_VERSION_STRING)
 DIR_NAME_SRC       := $(VERSIONED_FILENAME)-source
@@ -358,7 +349,7 @@ TAR_FILENAME       := $(DIR_NAME).tar
 BZIP_FILENAME      := $(TAR_FILENAME).bz2
 GZIP_FILENAME      := $(TAR_FILENAME).gz
 XZ_FILENAME        := $(TAR_FILENAME).xz
-ZIP_FILENAME       := $(VERSIONED_FILENAME).zip
+ZIP_FILENAME       := $(VERSIONED_FILENAME)-all.zip
 MD5_FILENAME       := $(DIR_NAME).md5
 MD5_SRC_FILENAME   ?= $(DIR_NAME).check.md5
 
@@ -410,7 +401,7 @@ clean::
 # Bundle source targets
 # target 'bundle_src which builds source bundle
 ################################################################
-RE_FILES_NO_SRC_BUNDLE = ^.devzone|^.hg
+RE_FILES_NO_SRC_BUNDLE = ^.devzone|^.git
 
 check: $(MD5_FILENAME)
 	$(_V) if [ -f $(MD5_SRC_FILENAME) ]; then echo "[CHECKING md5sums]"; else echo "Required file '$(MD5_SRC_FILENAME)' which to test against not found!"; false; fi
@@ -419,7 +410,7 @@ check: $(MD5_FILENAME)
 
 $(DIR_NAME_SRC).tar: $(DIR_NAME_SRC)
 	$(_E) "[BUNDLE SRC]"
-	$(_V) $(HG) archive -t tar $<.tar
+	$(_V) $(GIT) archive --format=tar HEAD | tar -x -C $(DIR_NAME_SRC)
 	$(_V) $(TAR) -uf $@ $^
 
 bundle_src: $(DIR_NAME_SRC).tar
@@ -435,6 +426,7 @@ Makefile.fordist:
 	$(_V) echo '# Definitions needed for tar releases' >> $@
 	$(_V) echo '# This part is automatically generated' >> $@
 	$(_V) echo '################################################################' >> $@
+	$(_V) echo 'REPO_VERSION := $(REPO_VERSION)' >> $@
 	$(_V) echo 'REPO_REVISION := $(NEWGRF_VERSION)' >> $@
 	$(_V) echo 'NEWGRF_VERSION := $(NEWGRF_VERSION)' >> $@
 	$(_V) echo 'REPO_HASH := $(REPO_HASH)' >> $@
@@ -442,12 +434,10 @@ Makefile.fordist:
 	$(_V) echo 'REPO_TITLE := $(REPO_TITLE)' >> $@
 	$(_V) echo 'REPO_DATE := $(REPO_DATE)' >> $@
 	$(_V) echo 'REPO_BRANCH := $(REPO_BRANCH)' >> $@
-	$(_V) echo 'REPO_MODIFIED := $(REPO_MODIFIED)' >> $@
-	$(_V) echo 'REPO_TAGS    := $(REPO_TAGS)'    >> $@
-	$(_V) echo 'HG := :' >> $@
+	$(_V) echo 'GIT := :' >> $@
 	$(_V) echo 'PYTHON := :' >> $@
 
-ifneq ("$(strip $(HG))",":")
+ifneq ("$(strip $(GIT))",":")
 $(DIR_NAME_SRC): $(MD5_SRC_FILENAME) Makefile.fordist
 	$(_E) "[ASSEMBLING] $(DIR_NAME_SRC)"
 	$(_V)-rm -rf $@
@@ -456,7 +446,7 @@ $(DIR_NAME_SRC): $(MD5_SRC_FILENAME) Makefile.fordist
 	$(_V) cp $(CP_FLAGS) Makefile.fordist $@/Makefile.dist
 else
 $(DIR_NAME_SRC):
-	$(_E) "Source releases can only be made from a hg checkout."
+	$(_E) "Source releases can only be made from a git checkout."
 	$(_V) false
 endif
 

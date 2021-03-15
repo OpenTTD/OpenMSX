@@ -32,7 +32,7 @@ $(BASE_FILENAME).obm: $(LANG_FILES) $(MIDI_FILES) $(THEMES_FILE) Makefile Makefi
 	@echo "" >> $@
 	@echo "[origin]" >> $@
 	@echo "$(REPO_ORIGIN)" >> $@
-	$(_E) "[Done] Basesound successfully generated."
+	$(_E) "[Done] Basemusic successfully generated."
 	$(_E) ""
 
 music: $(BASE_FILENAME).obm
