@@ -19,10 +19,10 @@ SHELL := /bin/bash
 ##################################################################
 
 # Definition of the grfs
-REPO_NAME           ?= My NewGRF
+REPO_NAME           ?= OpenMSX
 
 # This is the filename part common to the grf file, main source file and the tar name
-BASE_FILENAME       ?= mynewgrf
+BASE_FILENAME       ?= openmsx
 
 # Documentation files
 DOC_FILES ?= docs/readme.txt docs/license.txt docs/changelog.txt
@@ -124,20 +124,13 @@ UNIX2DOS       ?= $(shell which unix2dos 2>/dev/null)
 UNIX2DOS_FLAGS ?= $(shell [ -n $(UNIX2DOS) ] && $(UNIX2DOS) -q --version 1>&2 2>/dev/null && echo "-q" || echo "")
 
 ################################################################
-# Get the Repository revision, tags and the modified status
-# The displayed name within OpenTTD / TTDPatch
-# Looks like either
-# a nightly build:                 GRF's Name nightly-r51
-# a release build (taged version): GRF's Name 0.1
+#
+# Working copy / bundle version detection.
+#
 ################################################################
-# This must be conditional declarations, or building from the tar.gz won't work anymore
-DEFAULT_BRANCH_NAME ?=
 
-# Git hash
-REPO_HASH      ?= $(shell $(GIT) log -n1 --pretty="format:%h")
-# Git hash again (same as REPO_HASH, Git has no revisions)
-REPO_REVISION  := $(REPO_HASH)
-
+# Always run version detection, so we always have an accurate modified
+# flag
 REPO_VERSIONS := $(shell AWK="$(AWK)" "./findversion.sh")
 
 # Use autodetected revisions
@@ -151,17 +144,7 @@ REPO_DATE_MONTH := $(shell echo "${REPO_DATE}" | cut -b5-6 | sed s/^0//)
 REPO_DATE_DAY := $(shell echo "${REPO_DATE}" | cut -b7-8 | sed s/^0//)
 REPO_DAYS_SINCE_2000 := $(shell $(PYTHON) -c "from datetime import date; print( (date($(REPO_DATE_YEAR),$(REPO_DATE_MONTH),$(REPO_DATE_DAY))-date(2000,1,1)).days)")
 
-REPO_TAGS ?= $(REPO_VERSION)
-
-TEMP_GITSTATUS ?= $(shell $(GIT) status --porcelain=v2 | grep "^[12]")
-# Whether there are local changes ("M" if modified, "" if not)
-REPO_MODIFIED  ?= $(shell [ -z "$TEMP_GITSTATUS" ] && echo "" || echo "M")
-
-# Branch name
-REPO_BRANCH    ?= $(shell $(GIT) status -b --porcelain=v2 | grep "^# branch\.head" | tail -c7)
-
-# Filename addition, if we're not building the default branch
-REPO_BRANCH_STRING ?= $(shell if [ "$(REPO_BRANCH)" = "$(DEFAULT_BRANCH_NAME)" ]; then echo ""; else echo "-$(REPO_BRANCH)"; fi)
+REPO_TAGS      ?= $(REPO_VERSION)
 
 # The version reported to OpenTTD. Usually days since 2000 + branch offset
 NEWGRF_VERSION ?= $(shell let x="$(REPO_DAYS_SINCE_2000) + 65536 * $(REPO_BRANCH_VERSION)"; echo "$$x")
@@ -366,7 +349,7 @@ TAR_FILENAME       := $(DIR_NAME).tar
 BZIP_FILENAME      := $(TAR_FILENAME).bz2
 GZIP_FILENAME      := $(TAR_FILENAME).gz
 XZ_FILENAME        := $(TAR_FILENAME).xz
-ZIP_FILENAME       := $(VERSIONED_FILENAME).zip
+ZIP_FILENAME       := $(VERSIONED_FILENAME)-all.zip
 MD5_FILENAME       := $(DIR_NAME).md5
 MD5_SRC_FILENAME   ?= $(DIR_NAME).check.md5
 
@@ -443,6 +426,7 @@ Makefile.fordist:
 	$(_V) echo '# Definitions needed for tar releases' >> $@
 	$(_V) echo '# This part is automatically generated' >> $@
 	$(_V) echo '################################################################' >> $@
+	$(_V) echo 'REPO_VERSION := $(REPO_VERSION)' >> $@
 	$(_V) echo 'REPO_REVISION := $(NEWGRF_VERSION)' >> $@
 	$(_V) echo 'NEWGRF_VERSION := $(NEWGRF_VERSION)' >> $@
 	$(_V) echo 'REPO_HASH := $(REPO_HASH)' >> $@
@@ -450,8 +434,6 @@ Makefile.fordist:
 	$(_V) echo 'REPO_TITLE := $(REPO_TITLE)' >> $@
 	$(_V) echo 'REPO_DATE := $(REPO_DATE)' >> $@
 	$(_V) echo 'REPO_BRANCH := $(REPO_BRANCH)' >> $@
-	$(_V) echo 'REPO_MODIFIED := $(REPO_MODIFIED)' >> $@
-	$(_V) echo 'REPO_TAGS    := $(REPO_TAGS)'    >> $@
 	$(_V) echo 'GIT := :' >> $@
 	$(_V) echo 'PYTHON := :' >> $@
 
