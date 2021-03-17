@@ -5,7 +5,7 @@ on:
     tags:
     - '*'
   schedule:
-  - cron: '30 21 * * *'
+  - cron: '0 23 * * *'
 
 jobs:
   publish_binaries:
