@@ -1,4 +1,5 @@
-OpenMSX Readme - An OpenTTD Music replacement set
+OpenMSX - base music set for OpenTTD
+Readme
 
 ===============================
 Current Version: {{GRF_TITLE}}
@@ -17,7 +18,7 @@ Contents
 0 About OpenMSX
 ===============
 
-OpenMSX is an open source Music Set for OpenTTD.
+OpenMSX is an open source base music set for OpenTTD.
 
 
 
@@ -150,7 +151,7 @@ Mind to re-start OpenTTD as it needs to re-read the files.
 4 License
 =========
 
-OpenMSX Music Replacement Set for OpenTTD Copyright (C) 2010 OpenMSX Authors
+The OpenMSX music set for OpenTTD Copyright (C) 2010-2021 OpenMSX Authors
 (see below or in the source in themes.list) and is licensed under GPL v2.
 
 This program is free software; you can redistribute it and/or modify it under
