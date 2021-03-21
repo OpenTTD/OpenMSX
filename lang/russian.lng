@@ -2,4 +2,4 @@
 ##plural 6
 ##gender p n m f
 ##case acc nom pre f abl m n dat p gen
-STR_GENERAL_DESC        :OpenMSX представляет собой набор музыкального оформления для OpenTTD. Свободно распространяется в соответствии с лицензией GNU General Public License version 2. Более подробную информацию о создателях набора можно узнать в документе "readme.txt" [{TITLE}]
+STR_GENERAL_DESC        :OpenMSX представляет базовый набор музыкального оформления для OpenTTD. Свободно распространяется в соответствии с лицензией GNU General Public License version 2. Более подробную информацию о создателях набора можно узнать в документе "readme.txt" [{TITLE}]
