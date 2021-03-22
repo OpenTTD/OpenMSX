@@ -1,4 +1,4 @@
 ##grflangid 0x02
 ##plural 0
 ##gender p m w n
-STR_GENERAL_DESC        :OpenMSX-Musikersatzset für OpenTTD. Frei verfügbar unter den Bedingungen der GPL v2. Die vollständigen Referenzen sind in „readme.txt“. [{TITLE}]
+STR_GENERAL_DESC        :OpenMSX-Basismusikset für OpenTTD. Frei verfügbar unter den Bedingungen der GPL v2. Die vollständigen Referenzen sind in „readme.txt“. [{TITLE}]

@@ -1,4 +1,4 @@
 ##grflangid 0x22
 ##plural 0
 ##gender Masculin Femenin
-STR_GENERAL_DESC        :Joc substitut de la música OpenMSX per a OpenTTD. Disponibles lliurement sota els termes de la GNU General Public License versió 2. Per veure els crèdits sencers veure "readme.txt". [{TITLE}]
+STR_GENERAL_DESC        :Joc base de música OpenMSX per a l'OpenTTD. Disponible lliurement sota els termes de la GNU General Public License versió 2. Per veure la llista de col·laboradors, vegeu el fitxer "readme.txt". [{TITLE}]
