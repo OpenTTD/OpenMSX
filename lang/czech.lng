@@ -2,4 +2,4 @@
 ##plural 10
 ##gender fp map f mnp m n np
 ##case acc nom loc big voc ins dat small gen
-STR_GENERAL_DESC        :Nahrazující sada hudby OpenMSX pro OpenTTD. Volně dostupná pod licencí GNU General Public License verze 2. Bližší informace naleznete v souboru "readme.txt". [{TITLE}]
+STR_GENERAL_DESC        :Základní sada hudby OpenMSX pro OpenTTD. Volně dostupná pod licencí GNU General Public License verze 2. Bližší informace naleznete v souboru "readme.txt". [{TITLE}]
