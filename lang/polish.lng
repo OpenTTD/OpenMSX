@@ -2,4 +2,4 @@
 ##plural 7
 ##gender n m f
 ##case c b d m n w
-STR_GENERAL_DESC        :OpenMSX to zestaw zastępujący utwory muzyczne w OpenTTD. Dostępny na warunkach licencji GNU GPL wersja 2. Lista wszystkich autorów znajduje się w pliku "readme.txt" [{TITLE}]
+STR_GENERAL_DESC        :OpenMSX to zestaw muzyki dla OpenTTD. Dostępny na warunkach licencji GNU GPLv2. Lista wszystkich autorów znajduje się w pliku "readme.txt" [{TITLE}]

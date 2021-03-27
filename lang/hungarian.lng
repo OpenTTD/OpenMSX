@@ -1,4 +1,4 @@
 ##grflangid 0x24
 ##plural 2
 ##case t ba
-STR_GENERAL_DESC        :OpenMSX zenei alapcsomag az OpenTTD-hez. Ingyenesen hozzáférhető a GPL v2 feltételeivel. A teljes listához lásd a "readme.txt" fájlt. [{TITLE}]
+STR_GENERAL_DESC        :OpenMSX zenei alapcsomag az OpenTTD-hez. Ingyenesen hozzáférhető a GPL v2 feltételeivel. A teljes stáblistához lásd a readme-t. [{TITLE}]
