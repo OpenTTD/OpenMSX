@@ -57,7 +57,12 @@ ROOT_DIR=`pwd`
 # Determine if we are using a modified version
 # Assume the dir is not modified
 MODIFIED="0"
-if [ -d "$ROOT_DIR/.git" ] || [ -f "$ROOT_DIR/.git" ]; then
+if [ -f "$ROOT_DIR/.ottdrev" ]; then
+	# We are an exported source bundle
+	cat $ROOT_DIR/.ottdrev
+	exit
+
+elif [ -d "$ROOT_DIR/.git" ] || [ -f "$ROOT_DIR/.git" ]; then
 	# We are a git checkout
 	# Refresh the index to make sure file stat info is in sync, then look for modifications
 	git update-index --refresh >/dev/null
@@ -92,10 +97,6 @@ if [ -d "$ROOT_DIR/.git" ] || [ -f "$ROOT_DIR/.git" ]; then
 		ISSTABLETAG="0"
 	fi
 
-elif [ -f "$ROOT_DIR/.ottdrev" ]; then
-	# We are an exported source bundle
-	cat $ROOT_DIR/.ottdrev
-	exit
 else
 	# We don't know
 	MODIFIED="1"
