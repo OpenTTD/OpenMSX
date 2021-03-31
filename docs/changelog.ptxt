@@ -1,10 +1,17 @@
+OpenMSX 0.4.0
+-------------
+Change: Restore 'Keep on Rolling' by Trolley Trev
+Change: Stop calling OpenMSX a 'replacement'
+
+
+
 OpenMSX 0.3.1
 -------------
-- Change: Add copyright information to build system
+Change: Add copyright information to build system
 
-- Fix #1210: Typo in readme.
-- Fix #1202: Replace 'Keep on rolling' (temporarily) with 'Big Man Boogie' by Jim Redfarn
-- Fix #1078: Let songs set their assumed defaults (editing by Xrufu)
+Fix #1210: Typo in readme.
+Fix #1202: Replace 'Keep on rolling' (temporarily) with 'Big Man Boogie' by Jim Redfarn
+Fix #1078: Let songs set their assumed defaults (editing by Xrufu)
 
 
 
