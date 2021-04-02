@@ -39,7 +39,7 @@ OpenMSX is an open source base music set for OpenTTD.
       download the latest OpenMSX package from its development homepage:
       homepage: https://github.com/OpenTTD/OpenMSX
       Unpack the zip file into the OpenTTD 'baseset' directory
-      (see section 4.2 of the OpenTTD readme for a detailed treatise on
+      (see the OpenTTD readme for a detailed treatise on
       all data dirs OpenTTD recognizes).
       - An OpenTTD folder in your user account's home directory:
         Windows:
@@ -112,9 +112,7 @@ and you might additionally want a text editor of your choice and possibly a
 programme capable of creating and editing midi files.
 
 On Windows: We advise to get a MinGW development environment.
-For more detailed instructions, see our guide at
-    http://dev.openttdcoop.org/projects/home/wiki
-and the very extensive and detailed installation instructions on the
+For more detailed instructions, see the installation instructions on the
 MinGW wiki at
     http://www.mingw.org/wiki/Getting_Started
 
