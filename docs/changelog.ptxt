@@ -9,9 +9,10 @@ OpenMSX 0.3.1
 -------------
 Change: Add copyright information to build system
 
-Fix #1210: Typo in readme.
-Fix #1202: Replace 'Keep on rolling' (temporarily) with 'Big Man Boogie' by Jim Redfarn
-Fix #1078: Let songs set their assumed defaults (editing by Xrufu)
+Fix: Typo in readme.
+Fix: Replace 'Keep on rolling' with 'Big Man Boogie'
+     by Jim Redfarn
+Fix: Let songs set their assumed defaults (editing by Xrufu)
 
 
 
@@ -30,16 +31,21 @@ Feature: 'Slow and Easy' by Jim Redfarn
 Feature: 'City Blues' by Jim Redfarn
 Feature: 'No Work Song' by Jim Redfarn
 Feature: 'The Hobo' by Jim Redfarn
-Feature: [Makefile] Add 'addcheck' which checks for dependencies not added to the mercurial repo
-Feature: [Makefile] Introduce target 'distclean' which should delete everything not found in the tarball (based on patch by blathijs)
+Feature: [Makefile] Add 'addcheck' which checks for dependencies
+         not added to the Mercurial repo
+Feature: [Makefile] Introduce target 'distclean' which should delete
+         everything not found in the tarball (based on patch by blathijs)
 
 Change: License now is only GPL v2
 Change: Rename the title theme into 'OpenTTD journey'
 
 Fix: Don't rebuild the md5sums file which one checks against
-Fix: Replace invalid general midi 'Little Blue Box Car' by 'Downtown cab ride' by imuh3
-Fix: Replace invalid general midi 'Smooth Groove' by 'Skydive' by imuh3
-Fix: [Makefile] Don't rebuild the md5sums file which one wants to check against
+Fix: Replace invalid general midi 'Little Blue Box Car'
+     by 'Downtown cab ride' by imuh3
+Fix: Replace invalid general midi 'Smooth Groove'
+     by 'Skydive' by imuh3
+Fix: [Makefile] Don't rebuild the md5sums file which one
+     wants to check against
 Fix: [Makefile] Don't pack files which make no sense in a source release
 Fix: [Makefile] Fail on the missing file, not on the dependency check
 Fix: [Makefile] {{tag}} didn't work for some tags in readme file
@@ -60,7 +66,8 @@ Change: Replace 'Rubens Random Kingodom' by 'Run For Your Life'
 
 Fix: Add two missing files
 
-Update: Base set translations for Polish, Romanian, Slovak, Serbian and Turkish
+Update: Base set translations for Polish, Romanian, Slovak, Serbian and
+        Turkish
 
 
 
@@ -68,10 +75,14 @@ OpenMSX 0.2.0
 -------------
 Change: Rename 'Theme song' into 'Smooth groove' and update its music a bit
 Update: New version of 'Keep on Rolling'
-Update: African, Arabic, Catalan, Danish, Estonian, Greek and Norwegian (Nynorsk) base set translations.
+Update: African, Arabic, Catalan, Danish, Estonian, Greek and
+        Norwegian (Nynorsk) base set translations.
 Feature: Add 'Busy Schedule' and 'The Fast Route'
-Feature: Add 10 new songs as modern theme: Simple ride, Midnight snow run, Deep down chemistry lab, Harp harmony 'n humor,
-         Rubens random kingdom, Wandering dark castle, Wood whistles, Linn's basket of treats, Plain simple relax song and Mighty giant run
+Feature: Add 10 new songs as modern theme:
+         Simple ride, Midnight snow run, Deep down chemistry lab,
+         Harp harmony 'n humor, Rubens random kingdom,
+         Wandering dark castle, Wood whistles, Linn's basket of treats,
+         Plain simple relax song and Mighty giant run
 
 
 
@@ -81,5 +92,9 @@ Feature: Modern Motion (Mr.Ksoft)
 Feature: Little Blue Box Car (Hazza)
 Feature: Keep on Rolling (Trolley Trev)
 Feature: Theme song (Samwise)
-Feature: Bulgarian, Chinese (Traditional), Croatian, Indonesian, Norwegian (Bokmal), Portuguese, Russian, Slovenian, Swedish, Dutch, Italian, French, Hungarian, Spanish, German and Czech description translations
-Feature: Build system which allows building the whole set from a simple table
+Feature: Bulgarian, Chinese (Traditional), Croatian, Indonesian,
+         Norwegian (Bokmal), Portuguese, Russian, Slovenian, Swedish,
+         Dutch, Italian, French, Hungarian, Spanish, German and Czech
+         description translations
+Feature: Build system which allows building the whole set from a simple
+         table
