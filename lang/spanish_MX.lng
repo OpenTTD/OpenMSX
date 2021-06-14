@@ -1,4 +1,4 @@
 ##grflangid 0x55
 ##plural 0
 ##gender m f
-STR_GENERAL_DESC        :Paquete de música de reemplazo OpenMSX para OpenTTD, disponible de forma libre bajo los términos de la GPL v2. Créditos completos en el archivo Léeme [{TITLE}]
+STR_GENERAL_DESC        :Paquete base de música OpenMSX para OpenTTD, disponible de forma libre bajo los términos de la GPL v2. Créditos completos en el archivo Léeme [{TITLE}]
