@@ -2,4 +2,4 @@
 ##plural 2
 ##gender n m f
 ##case date geniki subs
-STR_GENERAL_DESC        :Σετ αντικατάστασης μουσικής OpenMSX για το OpenTTD. Ελεύθερα διαθέσιμο κάτω από τους όρους χρήσης του GNU General Public έκδοση 2. Για πληρη αναφορά συντελεστών δείτε το "readme.txt". [{TITLE}]
+STR_GENERAL_DESC        :Βασικό πακέτο μουσικής OpenMSX για το OpenTTD. Ελεύθερα διαθέσιμο υπό τους όρους της άδειας GPL v2. Για τα πλήρη εύσημα δείτε το αρχείο "readme.txt" [{TITLE}]
