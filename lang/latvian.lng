@@ -1,0 +1,6 @@
+##grflangid 0x2a
+##plural 3
+##gender m f
+##case kas
+STR_GENERAL_DESC.kas    :OpenMSX bāzes mūzikas komplekts OpenTTD. Pieejams bezmaksas, saskaņā ar GPL v2 noteikumiem. Pilnu autoru sarakstu skatiet rakstā “readme.txt” [{TITLE}]
+STR_GENERAL_DESC        :OpenMSX bāzes mūzikas komplekts OpenTTD. Pieejams bezmaksas, saskaņā ar GPL v2 noteikumiem. Pilnu autoru sarakstu skatiet rakstā “readme.txt” [{TITLE}]
