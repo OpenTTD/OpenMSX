@@ -1,0 +1,5 @@
+##grflangid 0x33
+##plural 6
+##gender s mn f m
+##case r d z
+STR_GENERAL_DESC        :OpenMSX -- базова музика для OpenTTD. Вільно доступна за умовами GPL v2. Детальніше дивись "readme.txt" [{TITLE}]
