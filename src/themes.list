@@ -20,8 +20,8 @@ new_6; wood_whistles.mid;           Tistou Blomberg;                            
 new_7; linns_basket.mid;            Tistou Blomberg;                                                        Linn's basket of treats
 new_8; relax_song.mid;              Tistou Blomberg;                                                        Plain simple relax song
 new_9; chemistry_lab.mid;           Tistou Blomberg;                                                        Deep down chemistry lab
-ezy_0; 5432gone_redfarn.mid;        Jim Redfarn;                                                            5 4 3 2 .. Gone
-ezy_1; boogi_marabi_redfarn.mid;    Jim Redfarn;                                                            Boogie Marabi
+ezy_0; boogi_marabi_redfarn.mid;    Jim Redfarn;                                                            Boogie Marabi
+ezy_1; 5432gone_redfarn.mid;        Jim Redfarn;                                                            5 4 3 2 .. Gone
 ezy_2; moo_redfarn.mid;             Jim Redfarn;                                                            Moo Moo Boogie
 ezy_3; say_what_redfarn.mid;        Jim Redfarn;                                                            Say What
 ezy_4; be_sharp_bw_redfarn.mid;     Jim Redfarn;                                                            Be Sharp Boogie
