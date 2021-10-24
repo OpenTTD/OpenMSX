@@ -1,7 +1,15 @@
+OpenMSX 0.4.2
+-------------
+Fix: Issue preventing BaNaNaS upload due to a lack of any checksum changes
+
+
+
 OpenMSX 0.4.1
 -------------
 Update: Lots of translations
 Fix: Install location used by the build system
+
+
 
 OpenMSX 0.4.0
 -------------
