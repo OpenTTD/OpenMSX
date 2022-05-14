@@ -1,3 +1,3 @@
 ##grflangid 0x56
 ##plural 1
-STR_GENERAL_DESC        :OpenMSX 是一套供 OpenTTD 使用的音乐集。在 GNU 通用公共授权条款版本 2 之授权下可自由使用。如欲观看完整的鸣谢清单请参阅 "readme.txt"。 [{TITLE}]
+STR_GENERAL_DESC        :OpenMSX 是一套供 OpenTTD 使用的基础音乐包。在 GNU 通用公共授权条款版本 2 之授权下可自由使用。完整的鸣谢清单请参阅 "readme.txt"。 [{TITLE}]
