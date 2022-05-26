@@ -1,3 +1,3 @@
 ##grflangid 0x0c
 ##plural 1
-STR_GENERAL_DESC        :OpenMSX 是一套供 OpenTTD 使用、代替 TTD 原裝音樂的音樂集。在 GNU 通用公共授權條款版本 2 之授權下可自由使用。如欲觀看完整的鳴謝清單，請參閱 "readme.txt"。 [{TITLE}]
+STR_GENERAL_DESC        :OpenMSX 是一套供 OpenTTD 使用的基本音樂集。在 GNU 通用公共授權條款版本 2 之授權下可自由使用。如欲觀看完整的鳴謝清單，請參閱 "readme.txt"。 [{TITLE}]
