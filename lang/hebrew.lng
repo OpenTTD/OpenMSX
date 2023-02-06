@@ -1,0 +1,5 @@
+##grflangid 0x61
+##plural 0
+##gender m f
+##case gen plural singular
+STR_GENERAL_DESC        :OpenMSX היא חבילת הבסיס למוזיקה ב OpenTTD. מופץ תחת רשיון GNU General Public License v2. מידע מלא וקרדיטים ניתן למצוא בקובץ "readme.txt" [{TITLE}]
