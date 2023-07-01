@@ -5,30 +5,13 @@ on:
     branches:
     - master
   pull_request:
+    branches:
+    - master
 
 jobs:
-  build:
-    name: Build OpenMSX
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
-    - name: Checkout tags
-      uses: openttd/actions/checkout@v1
-      with:
-        with-tags: true
-    - name: Install dependencies
-      run: |
-        set -e
-
-        sudo apt update
-        sudo apt install -y catcodec --no-install-recommends
-    - name: Build
-      run: |
-        set -e
-
-        make maintainer-clean
-        make bundle_tar bundle_src
-
+  testing:
+    name: Testing
+    uses: OpenTTD/actions/.github/workflows/rw-entry-testing-baseset.yml@v4
+    with:
+      apt-packages: catcodec
+      name: openmsx
