@@ -25,7 +25,7 @@ REPO_NAME           ?= OpenMSX
 BASE_FILENAME       ?= openmsx
 
 # Documentation files
-DOC_FILES ?= docs/readme.txt docs/license.txt docs/changelog.txt
+DOC_FILES ?= README.md LICENSE changelog.txt
 
 # Possible offset to baseset version. Increase by one, if a release
 # branch is added to the repository
