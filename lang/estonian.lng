@@ -1,4 +1,4 @@
 ##grflangid 0x34
 ##plural 0
 ##case sü g in
-STR_GENERAL_DESC        :OpenMSX muusika OpenTTD jaoks. Vabalt saadaval GNU Üldise Avaliku Litsentsi versioon 2 alusel. Täpsemalt vaata failist "readme.txt". [{TITLE}]
+STR_GENERAL_DESC        :OpenMSX baasmuusika OpenTTD jaoks. Vabalt saadaval GNU Üldise Avaliku Litsentsi versioon 2 alusel. Täpsemalt vaata failist "readme.txt". [{TITLE}]
