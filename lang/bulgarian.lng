@@ -2,4 +2,4 @@
 ##plural 0
 ##gender p n m f
 ##case p n m f
-STR_GENERAL_DESC        :OpenMSX музикален пакет за OpenTTD. Свободен за разпространение по условията на GNU General Public License версия 2. Повече информация виж "readme.txt". [{TITLE}]
+STR_GENERAL_DESC        :Базов музикален пакет OpenMSX за OpenTTD. Свободен за разпространение по условията на GNU General Public License версия 2. Повече информация вижте в "readme.txt" [{TITLE}]
